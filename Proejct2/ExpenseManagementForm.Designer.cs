@@ -28,58 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.expenseGrid = new DevExpress.XtraGrid.GridControl();
+            this.mainView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ㄴㄴ = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.expenseGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainView)).BeginInit();
             this.SuspendLayout();
             // 
-            // ribbon
+            // labelControl1
             // 
-            this.ribbon.ApplicationIcon = null;
-            this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Name = "ribbon";
-            this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
-            this.ribbon.SelectedPage = this.ribbonPage1;
-            this.ribbon.Size = new System.Drawing.Size(442, 141);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("돋움체", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(116, 27);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "지출관리";
             // 
-            // ribbonPage1
+            // labelControl2
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("돋움체", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(12, 59);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(180, 24);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "오늘의 지출등록";
             // 
-            // ribbonPageGroup1
+            // expenseGrid
             // 
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.expenseGrid.Location = new System.Drawing.Point(12, 89);
+            this.expenseGrid.MainView = this.mainView;
+            this.expenseGrid.Name = "expenseGrid";
+            this.expenseGrid.Size = new System.Drawing.Size(1039, 527);
+            this.expenseGrid.TabIndex = 3;
+            this.expenseGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.mainView});
             // 
-            // ribbonStatusBar
+            // mainView
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 425);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(442, 24);
+            this.mainView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ㄴㄴ,
+            this.gridColumn2});
+            this.mainView.GridControl = this.expenseGrid;
+            this.mainView.Name = "mainView";
+            // 
+            // ㄴㄴ
+            // 
+            this.ㄴㄴ.Caption = "지출항목";
+            this.ㄴㄴ.Name = "ㄴㄴ";
+            this.ㄴㄴ.Visible = true;
+            this.ㄴㄴ.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "지출내용";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // ExpenseManagementForm
             // 
-            this.ClientSize = new System.Drawing.Size(442, 449);
-            this.Controls.Add(this.ribbonStatusBar);
-            this.Controls.Add(this.ribbon);
-            this.Ribbon = this.ribbon;
-            this.StatusBar = this.ribbonStatusBar;
-            this.Text = "ExpenseManagementForm";
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1063, 628);
+            this.Controls.Add(this.expenseGrid);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.labelControl1);
+            this.Name = "ExpenseManagementForm";
+            this.Text = "지출관리";
+            ((System.ComponentModel.ISupportInitialize)(this.expenseGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraGrid.GridControl expenseGrid;
+        private DevExpress.XtraGrid.Views.Grid.GridView mainView;
+        private DevExpress.XtraGrid.Columns.GridColumn ㄴㄴ;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

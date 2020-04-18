@@ -21,5 +21,11 @@ namespace Proejct2
             LaborerManagementForm laborerManagementForm = new LaborerManagementForm();
             laborerManagementForm.ShowDialog();
         }
+
+        private void expenseManagementButton_Click(object sender, EventArgs e)
+        {
+            ExpenseManagementForm expenseManagementForm = new ExpenseManagementForm();
+            expenseManagementForm.ShowDialog();
+        }
     }
 }
