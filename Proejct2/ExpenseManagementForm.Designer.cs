@@ -32,8 +32,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.expenseGrid = new DevExpress.XtraGrid.GridControl();
             this.mainView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ㄴㄴ = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.expenseSumColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.expenseItemColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.expenseContentColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.expenseGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainView)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // expenseGrid
             // 
+            this.expenseGrid.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expenseGrid.Location = new System.Drawing.Point(12, 89);
             this.expenseGrid.MainView = this.mainView;
             this.expenseGrid.Name = "expenseGrid";
@@ -70,25 +72,46 @@
             // 
             // mainView
             // 
+            this.mainView.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainView.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.mainView.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainView.Appearance.GroupPanel.Options.UseFont = true;
+            this.mainView.Appearance.GroupRow.Font = new System.Drawing.Font("돋움체", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainView.Appearance.GroupRow.Options.UseFont = true;
+            this.mainView.Appearance.HeaderPanel.Font = new System.Drawing.Font("돋움", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainView.Appearance.HeaderPanel.Options.UseFont = true;
+            this.mainView.Appearance.Row.Font = new System.Drawing.Font("돋움체", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainView.Appearance.Row.Options.UseFont = true;
             this.mainView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ㄴㄴ,
-            this.gridColumn2});
+            this.expenseSumColumn,
+            this.expenseItemColumn,
+            this.expenseContentColumn});
             this.mainView.GridControl = this.expenseGrid;
             this.mainView.Name = "mainView";
             // 
-            // ㄴㄴ
+            // expenseSumColumn
             // 
-            this.ㄴㄴ.Caption = "지출항목";
-            this.ㄴㄴ.Name = "ㄴㄴ";
-            this.ㄴㄴ.Visible = true;
-            this.ㄴㄴ.VisibleIndex = 0;
+            this.expenseSumColumn.Caption = "지출가격";
+            this.expenseSumColumn.Name = "expenseSumColumn";
+            this.expenseSumColumn.Visible = true;
+            this.expenseSumColumn.VisibleIndex = 1;
+            this.expenseSumColumn.Width = 155;
             // 
-            // gridColumn2
+            // expenseItemColumn
             // 
-            this.gridColumn2.Caption = "지출내용";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.expenseItemColumn.Caption = "지출항목";
+            this.expenseItemColumn.Name = "expenseItemColumn";
+            this.expenseItemColumn.Visible = true;
+            this.expenseItemColumn.VisibleIndex = 0;
+            this.expenseItemColumn.Width = 209;
+            // 
+            // expenseContentColumn
+            // 
+            this.expenseContentColumn.Caption = "지출내용";
+            this.expenseContentColumn.Name = "expenseContentColumn";
+            this.expenseContentColumn.Visible = true;
+            this.expenseContentColumn.VisibleIndex = 2;
+            this.expenseContentColumn.Width = 657;
             // 
             // ExpenseManagementForm
             // 
@@ -111,9 +134,10 @@
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraGrid.GridControl expenseGrid;
         private DevExpress.XtraGrid.Views.Grid.GridView mainView;
-        private DevExpress.XtraGrid.Columns.GridColumn ㄴㄴ;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn expenseItemColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn expenseContentColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn expenseSumColumn;
+        public DevExpress.XtraGrid.GridControl expenseGrid;
     }
 }

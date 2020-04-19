@@ -34,5 +34,15 @@ namespace Proejct2
             int hireCount = (int)manHireCountEdit.Value + (int)womanHireCountEdit.Value;
             hireTotalCountLable.Text = hireCount.ToString() + "명";
         }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("정말 저장하시겠습니까?","저장하기",MessageBoxButtons.YesNo )!= DialogResult.Yes)
+                return;
+            DevExpress.XtraGrid.Columns.GridColumn unbColumn = gridView.Columns.AddField("Total");
+
+            gridView.Columns.Add(unbColumn);
+
+        }
     }
 }
