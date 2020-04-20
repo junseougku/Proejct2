@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project3.LaborerManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -66,10 +67,24 @@ namespace Project3
             hireTotalCountLable.Text = hireCount.ToString();
         }
 
+        //저장버튼 
         private void saveButton_MouseHover(object sender, EventArgs e)
         {
             saveButtonTooltip.ToolTipTitle = "저장버튼";
             saveButtonTooltip.SetToolTip(saveButton, "반드시 이 버튼을 눌러야 저장됩니다");
+        }
+
+        //그리드에 로우 클릭시 그 데이터가 위 입력항목들에게 표시
+        private void laborGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            manHireCountCombo.Text = laborGrid.Rows[rowIndex].Cells[0].Value.ToString();
+        }
+
+        private void gridModifyButton_Click(object sender, EventArgs e)
+        {
+            GridModifyForm gridModifyForm = new GridModifyForm();
+            gridModifyForm.ShowDialog();
         }
     }
 }

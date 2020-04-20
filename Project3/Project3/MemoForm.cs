@@ -19,7 +19,10 @@ namespace Project3
         private void fontSettingButton_Click(object sender, EventArgs e)
         {
             if (fontDialog.ShowDialog() == DialogResult.OK)
+            {
                 memoBox.Font = fontDialog.Font;
+                memoTitleBox.Font = fontDialog.Font;
+            };
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -29,7 +32,13 @@ namespace Project3
 
         private void MemoForm_Load(object sender, EventArgs e)
         {
+            dateLabel.Text = DateTime.Today.ToString("d");
+        }
 
+        private void memoListButton_Click(object sender, EventArgs e)
+        {
+            MemoListForm memoListForm = new MemoListForm();
+            memoListForm.ShowDialog();
         }
     }
 }

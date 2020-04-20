@@ -33,6 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelControl1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gridModifyButton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.snakcostTxt = new System.Windows.Forms.TextBox();
@@ -47,19 +52,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.resetButton = new System.Windows.Forms.Button();
             this.laborGrid = new System.Windows.Forms.DataGridView();
             this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.laborerCountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.laborcostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.snakcostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sumcostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.AllRemoveStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveButtonTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.laborGrid)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -74,6 +78,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.gridModifyButton);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.resetButton);
@@ -98,6 +103,55 @@
             this.groupBox1.Size = new System.Drawing.Size(1058, 245);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // gridModifyButton
+            // 
+            this.gridModifyButton.Location = new System.Drawing.Point(638, 174);
+            this.gridModifyButton.Name = "gridModifyButton";
+            this.gridModifyButton.Size = new System.Drawing.Size(132, 65);
+            this.gridModifyButton.TabIndex = 17;
+            this.gridModifyButton.Text = "표 편집";
+            this.gridModifyButton.UseVisualStyleBackColor = true;
+            this.gridModifyButton.Click += new System.EventHandler(this.gridModifyButton_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 28);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(115, 21);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "오늘날짜 : ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(628, 70);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 21);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "명";
+            // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(914, 174);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(132, 65);
+            this.resetButton.TabIndex = 14;
+            this.resetButton.Text = "다시쓰기";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(776, 174);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(132, 65);
+            this.saveButton.TabIndex = 2;
+            this.saveButton.Text = "저  장";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.saveButton.MouseHover += new System.EventHandler(this.saveButton_MouseHover);
             // 
             // label9
             // 
@@ -257,27 +311,6 @@
             this.dateLabel.TabIndex = 0;
             this.dateLabel.Text = "날짜";
             // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(776, 174);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(132, 65);
-            this.saveButton.TabIndex = 2;
-            this.saveButton.Text = "저  장";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            this.saveButton.MouseHover += new System.EventHandler(this.saveButton_MouseHover);
-            // 
-            // resetButton
-            // 
-            this.resetButton.Location = new System.Drawing.Point(914, 174);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(132, 65);
-            this.resetButton.TabIndex = 14;
-            this.resetButton.Text = "다시쓰기";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
-            // 
             // laborGrid
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -295,6 +328,7 @@
             this.laborcostColumn,
             this.snakcostColumn,
             this.sumcostColumn});
+            this.laborGrid.ContextMenuStrip = this.menuStrip;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -308,54 +342,62 @@
             this.laborGrid.RowTemplate.Height = 23;
             this.laborGrid.Size = new System.Drawing.Size(1058, 304);
             this.laborGrid.TabIndex = 2;
+            this.laborGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.laborGrid_CellClick);
             // 
             // dateColumn
             // 
             this.dateColumn.HeaderText = "날짜";
+            this.dateColumn.MinimumWidth = 20;
             this.dateColumn.Name = "dateColumn";
+            this.dateColumn.ReadOnly = true;
+            this.dateColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dateColumn.Width = 190;
             // 
             // laborerCountColumn
             // 
             this.laborerCountColumn.HeaderText = "고용한사람수";
+            this.laborerCountColumn.MinimumWidth = 20;
             this.laborerCountColumn.Name = "laborerCountColumn";
+            this.laborerCountColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.laborerCountColumn.Width = 205;
             // 
             // laborcostColumn
             // 
             this.laborcostColumn.HeaderText = "인건비";
+            this.laborcostColumn.MinimumWidth = 20;
             this.laborcostColumn.Name = "laborcostColumn";
+            this.laborcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.laborcostColumn.Width = 205;
             // 
             // snakcostColumn
             // 
             this.snakcostColumn.HeaderText = "간식비";
+            this.snakcostColumn.MinimumWidth = 20;
             this.snakcostColumn.Name = "snakcostColumn";
+            this.snakcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.snakcostColumn.Width = 205;
             // 
             // sumcostColumn
             // 
             this.sumcostColumn.HeaderText = "총액";
+            this.sumcostColumn.MinimumWidth = 20;
             this.sumcostColumn.Name = "sumcostColumn";
+            this.sumcostColumn.ReadOnly = true;
+            this.sumcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.sumcostColumn.Width = 209;
             // 
-            // label7
+            // menuStrip
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(628, 70);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 21);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "명";
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AllRemoveStripItem});
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(159, 26);
             // 
-            // label10
+            // AllRemoveStripItem
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 28);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 21);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "오늘날짜 : ";
+            this.AllRemoveStripItem.Name = "AllRemoveStripItem";
+            this.AllRemoveStripItem.Size = new System.Drawing.Size(158, 22);
+            this.AllRemoveStripItem.Text = "이 줄 전체 삭제";
             // 
             // saveButtonTooltip
             // 
@@ -375,6 +417,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.laborGrid)).EndInit();
+            this.menuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,13 +444,16 @@
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.DataGridView laborGrid;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ToolTip saveButtonTooltip;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn laborerCountColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn laborcostColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn snakcostColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumcostColumn;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ToolTip saveButtonTooltip;
+        private System.Windows.Forms.ContextMenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem AllRemoveStripItem;
+        private System.Windows.Forms.Button gridModifyButton;
     }
 }

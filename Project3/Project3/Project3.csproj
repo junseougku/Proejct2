@@ -45,6 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonClass.cs" />
+    <Compile Include="CustomControls\customCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\customCheckBox.Designer.cs">
+      <DependentUpon>customCheckBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExpenseManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,10 +59,16 @@
       <DependentUpon>ExpenseManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalClass.cs" />
-    <Compile Include="LaborerManagementForm.cs">
+    <Compile Include="LaborerManagement\GridModifyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LaborerManagementForm.Designer.cs">
+    <Compile Include="LaborerManagement\GridModifyForm.Designer.cs">
+      <DependentUpon>GridModifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LaborerManagement\LaborerManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LaborerManagement\LaborerManagementForm.Designer.cs">
       <DependentUpon>LaborerManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="mainForm1.cs">
@@ -70,12 +83,21 @@
     <Compile Include="MemoForm.Designer.cs">
       <DependentUpon>MemoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MemoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemoListForm.Designer.cs">
+      <DependentUpon>MemoListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ExpenseManagementForm.resx">
       <DependentUpon>ExpenseManagementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LaborerManagementForm.resx">
+    <EmbeddedResource Include="LaborerManagement\GridModifyForm.resx">
+      <DependentUpon>GridModifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LaborerManagement\LaborerManagementForm.resx">
       <DependentUpon>LaborerManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm1.resx">
@@ -83,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MemoForm.resx">
       <DependentUpon>MemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemoListForm.resx">
+      <DependentUpon>MemoListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,5 +128,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

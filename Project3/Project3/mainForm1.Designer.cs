@@ -85,7 +85,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 82);
             this.button1.TabIndex = 4;
-            this.button1.Text = "지출관리";
+            this.button1.Text = "판매관리";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // memoButton
