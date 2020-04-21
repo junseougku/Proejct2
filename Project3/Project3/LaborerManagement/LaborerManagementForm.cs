@@ -18,26 +18,55 @@ namespace Project3
             InitializeComponent();
         }
 
-        private void LaborerManagementForm_Load(object sender, EventArgs e)
+        private void DisplayColumns()
         {
-            dateLabel.Text = DateTime.Today.ToString("d");
-
             using (FileStream fs = new FileStream("gridSettingSaveFile.log", FileMode.OpenOrCreate))
             {
                 StreamReader sr = new StreamReader(fs, Encoding.UTF8);
 
                 string checkValue = sr.ReadLine();
-                if (checkValue == null || checkValue.Equals("0"))
-                {
-
-                }
+                if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
+                    laborGrid.Columns[1].Visible = false;
                 else
-                {
-                    var column = new DataGridViewColumn();
-                   
-                   // laborGrid.Columns.Add()
-                }
+                    laborGrid.Columns[1].Visible = true;
+
+                checkValue = sr.ReadLine();
+                if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
+                    laborGrid.Columns[2].Visible = false;                
+                else
+                    laborGrid.Columns[2].Visible = true;
+
+                checkValue = sr.ReadLine();
+                if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
+                    laborGrid.Columns[3].Visible = false;               
+                else
+                    laborGrid.Columns[3].Visible = true;
+
+                checkValue = sr.ReadLine();
+                if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
+                    laborGrid.Columns[4].Visible = false;                
+                else
+                    laborGrid.Columns[4].Visible = true;
+
+                checkValue = sr.ReadLine();
+                if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
+                    laborGrid.Columns[5].Visible = false;               
+                else
+                    laborGrid.Columns[5].Visible = true;
+
+                checkValue = sr.ReadLine();
+                if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
+                    laborGrid.Columns[6].Visible = false;               
+                else
+                    laborGrid.Columns[6].Visible = true;
             }
+        }
+
+        private void LaborerManagementForm_Load(object sender, EventArgs e)
+        {
+            dateLabel.Text = DateTime.Today.ToString("d");
+
+            DisplayColumns();
         }
 
         //저장버튼
@@ -64,8 +93,8 @@ namespace Project3
             manHireCountCombo.Text = "0";
             womanHireCountCombo.Text = "0";
 
-            laborcostTxt.Text = "";
-            snakcostTxt.Text = "";
+            laborcostTxt.Text = "0";
+            snakcostTxt.Text = "0";
         }
 
         //여자고용수 콤보박스 클릭시 호출
@@ -121,6 +150,7 @@ namespace Project3
         private void gridModifyButton_Click(object sender, EventArgs e)
         {
             GridModifyForm gridModifyForm = new GridModifyForm();
+            gridModifyForm.sendEvent += new GridModifyForm.Send_EventHandler(DisplayColumns);
             gridModifyForm.ShowDialog();
         }
 

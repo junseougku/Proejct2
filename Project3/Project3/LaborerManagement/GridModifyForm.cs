@@ -12,6 +12,9 @@ namespace Project3.LaborerManagement
 {
     public partial class GridModifyForm : Form
     {
+        public delegate void Send_EventHandler();
+        public event Send_EventHandler sendEvent;
+
         public GridModifyForm()
         {
             InitializeComponent();
@@ -22,8 +25,8 @@ namespace Project3.LaborerManagement
             using (FileStream fs = new FileStream("gridSettingSaveFile.log", FileMode.Create))
             {
                 StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
-                if (dateCheckBox.Check == false) sw.WriteLine(0);
-                else sw.WriteLine(1);
+
+                sw.WriteLine(1);
                 if (manCheckBox.Check == false) sw.WriteLine(0);
                 else sw.WriteLine(1);
                 if (womanCheckBox.Check == false) sw.WriteLine(0);
@@ -40,6 +43,8 @@ namespace Project3.LaborerManagement
                 sw.Flush();
             }
 
+            sendEvent();
+
             Close();
         }
 
@@ -55,8 +60,7 @@ namespace Project3.LaborerManagement
                 StreamReader sr = new StreamReader(fs, Encoding.UTF8);
 
                 string checkValue = sr.ReadLine();
-                if (checkValue == null || checkValue.Equals("0")) dateCheckBox.Check = false;
-                else dateCheckBox.Check = true;
+                dateCheckBox.Check = true;
 
                 checkValue = sr.ReadLine();
                 if (checkValue == null || checkValue.Equals("0")) manCheckBox.Check = false;
@@ -80,9 +84,7 @@ namespace Project3.LaborerManagement
 
                 checkValue = sr.ReadLine();
                 if (checkValue == null || checkValue.Equals("0")) sumcostCheckBox.Check = false;
-                else sumcostCheckBox.Check = true;
-
-            
+                else sumcostCheckBox.Check = true;          
             }
         }
     }

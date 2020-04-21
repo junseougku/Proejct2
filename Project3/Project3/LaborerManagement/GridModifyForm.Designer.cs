@@ -138,6 +138,7 @@
             // dateCheckBox
             // 
             this.dateCheckBox.Check = true;
+            this.dateCheckBox.Enabled = false;
             this.dateCheckBox.Location = new System.Drawing.Point(6, 31);
             this.dateCheckBox.Name = "dateCheckBox";
             this.dateCheckBox.Size = new System.Drawing.Size(135, 38);

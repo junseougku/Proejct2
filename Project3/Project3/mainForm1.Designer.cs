@@ -103,6 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1066, 602);
             this.Controls.Add(this.memoButton);
             this.Controls.Add(this.button1);
@@ -110,6 +111,7 @@
             this.Controls.Add(this.expenseManagementButton);
             this.Controls.Add(this.laborerManagementButton);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "mainForm";
             this.Text = "호박";
             this.ResumeLayout(false);
