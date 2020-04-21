@@ -52,10 +52,10 @@
     <Compile Include="CustomControls\customCheckBox.Designer.cs">
       <DependentUpon>customCheckBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExpenseManagementForm.cs">
+    <Compile Include="ExpenseManagement\ExpenseManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExpenseManagementForm.Designer.cs">
+    <Compile Include="ExpenseManagement\ExpenseManagementForm.Designer.cs">
       <DependentUpon>ExpenseManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalClass.cs" />
@@ -91,7 +91,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ExpenseManagementForm.resx">
+    <EmbeddedResource Include="ExpenseManagement\ExpenseManagementForm.resx">
       <DependentUpon>ExpenseManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LaborerManagement\GridModifyForm.resx">

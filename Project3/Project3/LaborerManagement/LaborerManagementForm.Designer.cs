@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelControl1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridModifyButton = new System.Windows.Forms.Button();
@@ -53,14 +53,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.laborGrid = new System.Windows.Forms.DataGridView();
+            this.menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.AllRemoveStripItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveButtonTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.laborerCountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.laborcostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.snakcostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sumcostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.AllRemoveStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveButtonTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.sumcostLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.laborGrid)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -78,6 +80,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.sumcostLabel);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.gridModifyButton);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
@@ -174,16 +178,24 @@
             // snakcostTxt
             // 
             this.snakcostTxt.Location = new System.Drawing.Point(236, 146);
+            this.snakcostTxt.MaxLength = 8;
             this.snakcostTxt.Name = "snakcostTxt";
             this.snakcostTxt.Size = new System.Drawing.Size(192, 32);
             this.snakcostTxt.TabIndex = 11;
+            this.snakcostTxt.Text = "0";
+            this.snakcostTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.snakcostTxt.TextChanged += new System.EventHandler(this.snakcostTxt_TextChanged);
             // 
             // laborcostTxt
             // 
             this.laborcostTxt.Location = new System.Drawing.Point(236, 108);
+            this.laborcostTxt.MaxLength = 8;
             this.laborcostTxt.Name = "laborcostTxt";
             this.laborcostTxt.Size = new System.Drawing.Size(192, 32);
             this.laborcostTxt.TabIndex = 10;
+            this.laborcostTxt.Text = "0";
+            this.laborcostTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.laborcostTxt.TextChanged += new System.EventHandler(this.laborcostTxt_TextChanged);
             // 
             // hireTotalCountLable
             // 
@@ -234,6 +246,7 @@
             "13",
             "14"});
             this.womanHireCountCombo.Location = new System.Drawing.Point(434, 67);
+            this.womanHireCountCombo.MaxLength = 2;
             this.womanHireCountCombo.Name = "womanHireCountCombo";
             this.womanHireCountCombo.Size = new System.Drawing.Size(76, 29);
             this.womanHireCountCombo.TabIndex = 6;
@@ -269,6 +282,7 @@
             "13",
             "14"});
             this.manHireCountCombo.Location = new System.Drawing.Point(290, 67);
+            this.manHireCountCombo.MaxLength = 2;
             this.manHireCountCombo.Name = "manHireCountCombo";
             this.manHireCountCombo.Size = new System.Drawing.Size(76, 29);
             this.manHireCountCombo.TabIndex = 4;
@@ -313,14 +327,14 @@
             // 
             // laborGrid
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.laborGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.laborGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.laborGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.laborGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dateColumn,
@@ -329,62 +343,20 @@
             this.snakcostColumn,
             this.sumcostColumn});
             this.laborGrid.ContextMenuStrip = this.menuStrip;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.laborGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.laborGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.laborGrid.Location = new System.Drawing.Point(12, 294);
             this.laborGrid.Name = "laborGrid";
             this.laborGrid.RowTemplate.Height = 23;
             this.laborGrid.Size = new System.Drawing.Size(1058, 304);
             this.laborGrid.TabIndex = 2;
             this.laborGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.laborGrid_CellClick);
-            // 
-            // dateColumn
-            // 
-            this.dateColumn.HeaderText = "날짜";
-            this.dateColumn.MinimumWidth = 20;
-            this.dateColumn.Name = "dateColumn";
-            this.dateColumn.ReadOnly = true;
-            this.dateColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dateColumn.Width = 190;
-            // 
-            // laborerCountColumn
-            // 
-            this.laborerCountColumn.HeaderText = "고용한사람수";
-            this.laborerCountColumn.MinimumWidth = 20;
-            this.laborerCountColumn.Name = "laborerCountColumn";
-            this.laborerCountColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.laborerCountColumn.Width = 205;
-            // 
-            // laborcostColumn
-            // 
-            this.laborcostColumn.HeaderText = "인건비";
-            this.laborcostColumn.MinimumWidth = 20;
-            this.laborcostColumn.Name = "laborcostColumn";
-            this.laborcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.laborcostColumn.Width = 205;
-            // 
-            // snakcostColumn
-            // 
-            this.snakcostColumn.HeaderText = "간식비";
-            this.snakcostColumn.MinimumWidth = 20;
-            this.snakcostColumn.Name = "snakcostColumn";
-            this.snakcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.snakcostColumn.Width = 205;
-            // 
-            // sumcostColumn
-            // 
-            this.sumcostColumn.HeaderText = "총액";
-            this.sumcostColumn.MinimumWidth = 20;
-            this.sumcostColumn.Name = "sumcostColumn";
-            this.sumcostColumn.ReadOnly = true;
-            this.sumcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.sumcostColumn.Width = 209;
             // 
             // menuStrip
             // 
@@ -402,6 +374,71 @@
             // saveButtonTooltip
             // 
             this.saveButtonTooltip.ToolTipTitle = "asd";
+            // 
+            // dateColumn
+            // 
+            this.dateColumn.HeaderText = "날짜";
+            this.dateColumn.MaxInputLength = 128;
+            this.dateColumn.MinimumWidth = 20;
+            this.dateColumn.Name = "dateColumn";
+            this.dateColumn.ReadOnly = true;
+            this.dateColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dateColumn.Width = 190;
+            // 
+            // laborerCountColumn
+            // 
+            this.laborerCountColumn.HeaderText = "고용한사람수";
+            this.laborerCountColumn.MaxInputLength = 2;
+            this.laborerCountColumn.MinimumWidth = 20;
+            this.laborerCountColumn.Name = "laborerCountColumn";
+            this.laborerCountColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.laborerCountColumn.Width = 205;
+            // 
+            // laborcostColumn
+            // 
+            this.laborcostColumn.HeaderText = "인건비";
+            this.laborcostColumn.MaxInputLength = 32;
+            this.laborcostColumn.MinimumWidth = 20;
+            this.laborcostColumn.Name = "laborcostColumn";
+            this.laborcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.laborcostColumn.Width = 205;
+            // 
+            // snakcostColumn
+            // 
+            this.snakcostColumn.HeaderText = "간식비";
+            this.snakcostColumn.MaxInputLength = 32;
+            this.snakcostColumn.MinimumWidth = 20;
+            this.snakcostColumn.Name = "snakcostColumn";
+            this.snakcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.snakcostColumn.Width = 205;
+            // 
+            // sumcostColumn
+            // 
+            this.sumcostColumn.HeaderText = "총액";
+            this.sumcostColumn.MaxInputLength = 32;
+            this.sumcostColumn.MinimumWidth = 20;
+            this.sumcostColumn.Name = "sumcostColumn";
+            this.sumcostColumn.ReadOnly = true;
+            this.sumcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.sumcostColumn.Width = 209;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(147, 187);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 21);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "총액 : ";
+            // 
+            // sumcostLabel
+            // 
+            this.sumcostLabel.AutoSize = true;
+            this.sumcostLabel.Location = new System.Drawing.Point(232, 187);
+            this.sumcostLabel.Name = "sumcostLabel";
+            this.sumcostLabel.Size = new System.Drawing.Size(42, 21);
+            this.sumcostLabel.TabIndex = 19;
+            this.sumcostLabel.Text = "0원";
             // 
             // LaborerManagementForm
             // 
@@ -447,13 +484,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ToolTip saveButtonTooltip;
+        private System.Windows.Forms.ContextMenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem AllRemoveStripItem;
+        private System.Windows.Forms.Button gridModifyButton;
+        private System.Windows.Forms.Label sumcostLabel;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn laborerCountColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn laborcostColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn snakcostColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumcostColumn;
-        private System.Windows.Forms.ContextMenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem AllRemoveStripItem;
-        private System.Windows.Forms.Button gridModifyButton;
     }
 }
