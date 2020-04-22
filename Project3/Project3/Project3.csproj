@@ -52,6 +52,7 @@
     <Compile Include="CustomControls\customCheckBox.Designer.cs">
       <DependentUpon>customCheckBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DB\DBManager.cs" />
     <Compile Include="ExpenseManagement\ExpenseManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>

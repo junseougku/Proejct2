@@ -12,6 +12,9 @@ namespace Project3
         //두 문자열을 int값으로 계산후 더한다음 다시문자열로 리턴
         public static string Get_Sum_StringToIntValue(string str1,string str2)
         {
+            if (str1.Equals("")) str1 = "0";
+            if (str2.Equals("")) str2 = "0";
+
             if(int.TryParse(str1, out int tempInt1) == false) return "false";
             if(int.TryParse(str2, out int tempInt2) == false) return "false";
             tempInt1 = tempInt1 + tempInt2;
@@ -26,5 +29,6 @@ namespace Project3
 
             return str1;
         }
+
     }
 }

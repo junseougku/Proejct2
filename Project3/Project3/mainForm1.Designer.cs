@@ -113,7 +113,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "mainForm";
-            this.Text = "호박";
+            this.Text = "관리프로그램";
             this.ResumeLayout(false);
             this.PerformLayout();
 

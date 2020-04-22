@@ -32,28 +32,28 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelControl1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.sumcostLabel = new System.Windows.Forms.Label();
+            this.laborerInputGroup = new System.Windows.Forms.GroupBox();
+            this.todaySumcostLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.gridModifyButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
+            this.todayResetButton = new System.Windows.Forms.Button();
+            this.todaySaveButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.snakcostTxt = new System.Windows.Forms.TextBox();
-            this.laborcostTxt = new System.Windows.Forms.TextBox();
-            this.hireTotalCountLabel = new System.Windows.Forms.Label();
+            this.todaySnakcostTxt = new System.Windows.Forms.TextBox();
+            this.todayLaborcostTxt = new System.Windows.Forms.TextBox();
+            this.todayHireTotalCountLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.womanHireCountCombo = new System.Windows.Forms.ComboBox();
+            this.todayWomanHireCountCombo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.manHireCountCombo = new System.Windows.Forms.ComboBox();
+            this.todayManHireCountCombo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateLabel = new System.Windows.Forms.Label();
+            this.todayDateLabel = new System.Windows.Forms.Label();
+            this.gridModifyButton = new System.Windows.Forms.Button();
             this.laborGrid = new System.Windows.Forms.DataGridView();
             this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manHireCountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,9 +66,37 @@
             this.AllRemoveStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveButtonTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.closeButton = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.InputModeTab = new System.Windows.Forms.TabControl();
+            this.newInputModeTab = new System.Windows.Forms.TabPage();
+            this.alterModeTab = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sumcostLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.snakcostTxt = new System.Windows.Forms.TextBox();
+            this.laborcostTxt = new System.Windows.Forms.TextBox();
+            this.hireTotalCountLabel = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.womanHireCountCombo = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.manHireCountCombo = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.laborerInputGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.laborGrid)).BeginInit();
             this.menuStrip.SuspendLayout();
+            this.InputModeTab.SuspendLayout();
+            this.newInputModeTab.SuspendLayout();
+            this.alterModeTab.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -81,44 +109,44 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "인력관리";
             // 
-            // groupBox1
+            // laborerInputGroup
             // 
-            this.groupBox1.Controls.Add(this.sumcostLabel);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.gridModifyButton);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.resetButton);
-            this.groupBox1.Controls.Add(this.saveButton);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.snakcostTxt);
-            this.groupBox1.Controls.Add(this.laborcostTxt);
-            this.groupBox1.Controls.Add(this.hireTotalCountLabel);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.womanHireCountCombo);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.manHireCountCombo);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dateLabel);
-            this.groupBox1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 43);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1058, 245);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            this.laborerInputGroup.Controls.Add(this.todaySumcostLabel);
+            this.laborerInputGroup.Controls.Add(this.label11);
+            this.laborerInputGroup.Controls.Add(this.label10);
+            this.laborerInputGroup.Controls.Add(this.label7);
+            this.laborerInputGroup.Controls.Add(this.todayResetButton);
+            this.laborerInputGroup.Controls.Add(this.todaySaveButton);
+            this.laborerInputGroup.Controls.Add(this.label9);
+            this.laborerInputGroup.Controls.Add(this.label8);
+            this.laborerInputGroup.Controls.Add(this.todaySnakcostTxt);
+            this.laborerInputGroup.Controls.Add(this.todayLaborcostTxt);
+            this.laborerInputGroup.Controls.Add(this.todayHireTotalCountLabel);
+            this.laborerInputGroup.Controls.Add(this.label6);
+            this.laborerInputGroup.Controls.Add(this.label5);
+            this.laborerInputGroup.Controls.Add(this.todayWomanHireCountCombo);
+            this.laborerInputGroup.Controls.Add(this.label4);
+            this.laborerInputGroup.Controls.Add(this.todayManHireCountCombo);
+            this.laborerInputGroup.Controls.Add(this.label3);
+            this.laborerInputGroup.Controls.Add(this.label2);
+            this.laborerInputGroup.Controls.Add(this.label1);
+            this.laborerInputGroup.Controls.Add(this.todayDateLabel);
+            this.laborerInputGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.laborerInputGroup.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.laborerInputGroup.Location = new System.Drawing.Point(3, 3);
+            this.laborerInputGroup.Name = "laborerInputGroup";
+            this.laborerInputGroup.Size = new System.Drawing.Size(1044, 213);
+            this.laborerInputGroup.TabIndex = 1;
+            this.laborerInputGroup.TabStop = false;
             // 
-            // sumcostLabel
+            // todaySumcostLabel
             // 
-            this.sumcostLabel.AutoSize = true;
-            this.sumcostLabel.Location = new System.Drawing.Point(232, 187);
-            this.sumcostLabel.Name = "sumcostLabel";
-            this.sumcostLabel.Size = new System.Drawing.Size(42, 21);
-            this.sumcostLabel.TabIndex = 19;
-            this.sumcostLabel.Text = "0원";
+            this.todaySumcostLabel.AutoSize = true;
+            this.todaySumcostLabel.Location = new System.Drawing.Point(232, 187);
+            this.todaySumcostLabel.Name = "todaySumcostLabel";
+            this.todaySumcostLabel.Size = new System.Drawing.Size(42, 21);
+            this.todaySumcostLabel.TabIndex = 19;
+            this.todaySumcostLabel.Text = "0원";
             // 
             // label11
             // 
@@ -128,16 +156,6 @@
             this.label11.Size = new System.Drawing.Size(73, 21);
             this.label11.TabIndex = 18;
             this.label11.Text = "총액 : ";
-            // 
-            // gridModifyButton
-            // 
-            this.gridModifyButton.Location = new System.Drawing.Point(638, 174);
-            this.gridModifyButton.Name = "gridModifyButton";
-            this.gridModifyButton.Size = new System.Drawing.Size(132, 65);
-            this.gridModifyButton.TabIndex = 17;
-            this.gridModifyButton.Text = "표 편집";
-            this.gridModifyButton.UseVisualStyleBackColor = true;
-            this.gridModifyButton.Click += new System.EventHandler(this.gridModifyButton_Click);
             // 
             // label10
             // 
@@ -157,26 +175,26 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "명";
             // 
-            // resetButton
+            // todayResetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(914, 174);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(132, 65);
-            this.resetButton.TabIndex = 14;
-            this.resetButton.Text = "다시쓰기";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            this.todayResetButton.Location = new System.Drawing.Point(900, 143);
+            this.todayResetButton.Name = "todayResetButton";
+            this.todayResetButton.Size = new System.Drawing.Size(132, 65);
+            this.todayResetButton.TabIndex = 14;
+            this.todayResetButton.Text = "다시쓰기";
+            this.todayResetButton.UseVisualStyleBackColor = true;
+            this.todayResetButton.Click += new System.EventHandler(this.todayResetButton_Click);
             // 
-            // saveButton
+            // todaySaveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(776, 174);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(132, 65);
-            this.saveButton.TabIndex = 2;
-            this.saveButton.Text = "저  장";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            this.saveButton.MouseHover += new System.EventHandler(this.saveButton_MouseHover);
+            this.todaySaveButton.Location = new System.Drawing.Point(762, 143);
+            this.todaySaveButton.Name = "todaySaveButton";
+            this.todaySaveButton.Size = new System.Drawing.Size(132, 65);
+            this.todaySaveButton.TabIndex = 2;
+            this.todaySaveButton.Text = "저  장";
+            this.todaySaveButton.UseVisualStyleBackColor = true;
+            this.todaySaveButton.Click += new System.EventHandler(this.todaySaveButton_Click);
+            this.todaySaveButton.MouseHover += new System.EventHandler(this.saveButton_MouseHover);
             // 
             // label9
             // 
@@ -196,36 +214,36 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "원";
             // 
-            // snakcostTxt
+            // todaySnakcostTxt
             // 
-            this.snakcostTxt.Location = new System.Drawing.Point(236, 146);
-            this.snakcostTxt.MaxLength = 8;
-            this.snakcostTxt.Name = "snakcostTxt";
-            this.snakcostTxt.Size = new System.Drawing.Size(192, 32);
-            this.snakcostTxt.TabIndex = 11;
-            this.snakcostTxt.Text = "0";
-            this.snakcostTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.snakcostTxt.TextChanged += new System.EventHandler(this.snakcostTxt_TextChanged);
+            this.todaySnakcostTxt.Location = new System.Drawing.Point(236, 146);
+            this.todaySnakcostTxt.MaxLength = 8;
+            this.todaySnakcostTxt.Name = "todaySnakcostTxt";
+            this.todaySnakcostTxt.Size = new System.Drawing.Size(192, 32);
+            this.todaySnakcostTxt.TabIndex = 11;
+            this.todaySnakcostTxt.Text = "0";
+            this.todaySnakcostTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.todaySnakcostTxt.TextChanged += new System.EventHandler(this.todaySnakcostTxt_TextChanged);
             // 
-            // laborcostTxt
+            // todayLaborcostTxt
             // 
-            this.laborcostTxt.Location = new System.Drawing.Point(236, 108);
-            this.laborcostTxt.MaxLength = 8;
-            this.laborcostTxt.Name = "laborcostTxt";
-            this.laborcostTxt.Size = new System.Drawing.Size(192, 32);
-            this.laborcostTxt.TabIndex = 10;
-            this.laborcostTxt.Text = "0";
-            this.laborcostTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.laborcostTxt.TextChanged += new System.EventHandler(this.laborcostTxt_TextChanged);
+            this.todayLaborcostTxt.Location = new System.Drawing.Point(236, 108);
+            this.todayLaborcostTxt.MaxLength = 8;
+            this.todayLaborcostTxt.Name = "todayLaborcostTxt";
+            this.todayLaborcostTxt.Size = new System.Drawing.Size(192, 32);
+            this.todayLaborcostTxt.TabIndex = 10;
+            this.todayLaborcostTxt.Text = "0";
+            this.todayLaborcostTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.todayLaborcostTxt.TextChanged += new System.EventHandler(this.todayLaborcostTxt_TextChanged);
             // 
-            // hireTotalCountLabel
+            // todayHireTotalCountLabel
             // 
-            this.hireTotalCountLabel.AutoSize = true;
-            this.hireTotalCountLabel.Location = new System.Drawing.Point(601, 70);
-            this.hireTotalCountLabel.Name = "hireTotalCountLabel";
-            this.hireTotalCountLabel.Size = new System.Drawing.Size(21, 21);
-            this.hireTotalCountLabel.TabIndex = 9;
-            this.hireTotalCountLabel.Text = "0";
+            this.todayHireTotalCountLabel.AutoSize = true;
+            this.todayHireTotalCountLabel.Location = new System.Drawing.Point(601, 70);
+            this.todayHireTotalCountLabel.Name = "todayHireTotalCountLabel";
+            this.todayHireTotalCountLabel.Size = new System.Drawing.Size(21, 21);
+            this.todayHireTotalCountLabel.TabIndex = 9;
+            this.todayHireTotalCountLabel.Text = "0";
             // 
             // label6
             // 
@@ -245,12 +263,12 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "여자";
             // 
-            // womanHireCountCombo
+            // todayWomanHireCountCombo
             // 
-            this.womanHireCountCombo.DropDownWidth = 76;
-            this.womanHireCountCombo.FormattingEnabled = true;
-            this.womanHireCountCombo.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.womanHireCountCombo.Items.AddRange(new object[] {
+            this.todayWomanHireCountCombo.DropDownWidth = 76;
+            this.todayWomanHireCountCombo.FormattingEnabled = true;
+            this.todayWomanHireCountCombo.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.todayWomanHireCountCombo.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -266,13 +284,13 @@
             "12",
             "13",
             "14"});
-            this.womanHireCountCombo.Location = new System.Drawing.Point(434, 67);
-            this.womanHireCountCombo.MaxLength = 2;
-            this.womanHireCountCombo.Name = "womanHireCountCombo";
-            this.womanHireCountCombo.Size = new System.Drawing.Size(76, 29);
-            this.womanHireCountCombo.TabIndex = 6;
-            this.womanHireCountCombo.Text = "0";
-            this.womanHireCountCombo.TextChanged += new System.EventHandler(this.womanHireCountCombo_TextChanged);
+            this.todayWomanHireCountCombo.Location = new System.Drawing.Point(434, 67);
+            this.todayWomanHireCountCombo.MaxLength = 2;
+            this.todayWomanHireCountCombo.Name = "todayWomanHireCountCombo";
+            this.todayWomanHireCountCombo.Size = new System.Drawing.Size(76, 29);
+            this.todayWomanHireCountCombo.TabIndex = 6;
+            this.todayWomanHireCountCombo.Text = "0";
+            this.todayWomanHireCountCombo.TextChanged += new System.EventHandler(this.womanHireCountCombo_TextChanged);
             // 
             // label4
             // 
@@ -283,10 +301,10 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "남자";
             // 
-            // manHireCountCombo
+            // todayManHireCountCombo
             // 
-            this.manHireCountCombo.FormattingEnabled = true;
-            this.manHireCountCombo.Items.AddRange(new object[] {
+            this.todayManHireCountCombo.FormattingEnabled = true;
+            this.todayManHireCountCombo.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -302,13 +320,13 @@
             "12",
             "13",
             "14"});
-            this.manHireCountCombo.Location = new System.Drawing.Point(290, 67);
-            this.manHireCountCombo.MaxLength = 2;
-            this.manHireCountCombo.Name = "manHireCountCombo";
-            this.manHireCountCombo.Size = new System.Drawing.Size(76, 29);
-            this.manHireCountCombo.TabIndex = 4;
-            this.manHireCountCombo.Text = "0";
-            this.manHireCountCombo.TextChanged += new System.EventHandler(this.manHireCountCombo_TextChanged);
+            this.todayManHireCountCombo.Location = new System.Drawing.Point(290, 67);
+            this.todayManHireCountCombo.MaxLength = 2;
+            this.todayManHireCountCombo.Name = "todayManHireCountCombo";
+            this.todayManHireCountCombo.Size = new System.Drawing.Size(76, 29);
+            this.todayManHireCountCombo.TabIndex = 4;
+            this.todayManHireCountCombo.Text = "0";
+            this.todayManHireCountCombo.TextChanged += new System.EventHandler(this.manHireCountCombo_TextChanged);
             // 
             // label3
             // 
@@ -337,14 +355,25 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "오늘 고용한 사람 수 : ";
             // 
-            // dateLabel
+            // todayDateLabel
             // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(119, 28);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(52, 21);
-            this.dateLabel.TabIndex = 0;
-            this.dateLabel.Text = "날짜";
+            this.todayDateLabel.AutoSize = true;
+            this.todayDateLabel.Location = new System.Drawing.Point(119, 28);
+            this.todayDateLabel.Name = "todayDateLabel";
+            this.todayDateLabel.Size = new System.Drawing.Size(52, 21);
+            this.todayDateLabel.TabIndex = 0;
+            this.todayDateLabel.Text = "날짜";
+            // 
+            // gridModifyButton
+            // 
+            this.gridModifyButton.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gridModifyButton.Location = new System.Drawing.Point(800, 613);
+            this.gridModifyButton.Name = "gridModifyButton";
+            this.gridModifyButton.Size = new System.Drawing.Size(132, 65);
+            this.gridModifyButton.TabIndex = 17;
+            this.gridModifyButton.Text = "표 편집";
+            this.gridModifyButton.UseVisualStyleBackColor = true;
+            this.gridModifyButton.Click += new System.EventHandler(this.gridModifyButton_Click);
             // 
             // laborGrid
             // 
@@ -374,7 +403,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.laborGrid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.laborGrid.Location = new System.Drawing.Point(12, 294);
+            this.laborGrid.Location = new System.Drawing.Point(12, 303);
             this.laborGrid.Name = "laborGrid";
             this.laborGrid.RowTemplate.Height = 23;
             this.laborGrid.Size = new System.Drawing.Size(1058, 304);
@@ -467,7 +496,7 @@
             // closeButton
             // 
             this.closeButton.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.closeButton.Location = new System.Drawing.Point(938, 609);
+            this.closeButton.Location = new System.Drawing.Point(938, 613);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(132, 65);
             this.closeButton.TabIndex = 20;
@@ -475,23 +504,316 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // InputModeTab
+            // 
+            this.InputModeTab.Controls.Add(this.newInputModeTab);
+            this.InputModeTab.Controls.Add(this.alterModeTab);
+            this.InputModeTab.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.InputModeTab.Location = new System.Drawing.Point(12, 43);
+            this.InputModeTab.Name = "InputModeTab";
+            this.InputModeTab.SelectedIndex = 0;
+            this.InputModeTab.Size = new System.Drawing.Size(1058, 254);
+            this.InputModeTab.TabIndex = 20;
+            // 
+            // newInputModeTab
+            // 
+            this.newInputModeTab.Controls.Add(this.laborerInputGroup);
+            this.newInputModeTab.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.newInputModeTab.Location = new System.Drawing.Point(4, 31);
+            this.newInputModeTab.Name = "newInputModeTab";
+            this.newInputModeTab.Padding = new System.Windows.Forms.Padding(3);
+            this.newInputModeTab.Size = new System.Drawing.Size(1050, 219);
+            this.newInputModeTab.TabIndex = 0;
+            this.newInputModeTab.Text = "신규입력";
+            this.newInputModeTab.UseVisualStyleBackColor = true;
+            // 
+            // alterModeTab
+            // 
+            this.alterModeTab.Controls.Add(this.groupBox1);
+            this.alterModeTab.Location = new System.Drawing.Point(4, 31);
+            this.alterModeTab.Name = "alterModeTab";
+            this.alterModeTab.Padding = new System.Windows.Forms.Padding(3);
+            this.alterModeTab.Size = new System.Drawing.Size(1050, 219);
+            this.alterModeTab.TabIndex = 1;
+            this.alterModeTab.Text = "수정입력";
+            this.alterModeTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.sumcostLabel);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.resetButton);
+            this.groupBox1.Controls.Add(this.saveButton);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.snakcostTxt);
+            this.groupBox1.Controls.Add(this.laborcostTxt);
+            this.groupBox1.Controls.Add(this.hireTotalCountLabel);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.womanHireCountCombo);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.manHireCountCombo);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Controls.Add(this.dateLabel);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1044, 213);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            // 
+            // sumcostLabel
+            // 
+            this.sumcostLabel.AutoSize = true;
+            this.sumcostLabel.Location = new System.Drawing.Point(232, 187);
+            this.sumcostLabel.Name = "sumcostLabel";
+            this.sumcostLabel.Size = new System.Drawing.Size(42, 21);
+            this.sumcostLabel.TabIndex = 19;
+            this.sumcostLabel.Text = "0원";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(147, 187);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 21);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "총액 : ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 28);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(73, 21);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "날짜 : ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(628, 70);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(31, 21);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "명";
+            // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(900, 143);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(132, 65);
+            this.resetButton.TabIndex = 14;
+            this.resetButton.Text = "다시쓰기";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(762, 143);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(132, 65);
+            this.saveButton.TabIndex = 2;
+            this.saveButton.Text = "저  장";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(434, 150);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(31, 21);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "원";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(434, 111);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(31, 21);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "원";
+            // 
+            // snakcostTxt
+            // 
+            this.snakcostTxt.Location = new System.Drawing.Point(236, 146);
+            this.snakcostTxt.MaxLength = 8;
+            this.snakcostTxt.Name = "snakcostTxt";
+            this.snakcostTxt.Size = new System.Drawing.Size(192, 32);
+            this.snakcostTxt.TabIndex = 11;
+            this.snakcostTxt.Text = "0";
+            this.snakcostTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.snakcostTxt.TextChanged += new System.EventHandler(this.snakcostTxt_TextChanged);
+            // 
+            // laborcostTxt
+            // 
+            this.laborcostTxt.Location = new System.Drawing.Point(236, 108);
+            this.laborcostTxt.MaxLength = 8;
+            this.laborcostTxt.Name = "laborcostTxt";
+            this.laborcostTxt.Size = new System.Drawing.Size(192, 32);
+            this.laborcostTxt.TabIndex = 10;
+            this.laborcostTxt.Text = "0";
+            this.laborcostTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.laborcostTxt.TextChanged += new System.EventHandler(this.laborcostTxt_TextChanged);
+            // 
+            // hireTotalCountLabel
+            // 
+            this.hireTotalCountLabel.AutoSize = true;
+            this.hireTotalCountLabel.Location = new System.Drawing.Point(601, 70);
+            this.hireTotalCountLabel.Name = "hireTotalCountLabel";
+            this.hireTotalCountLabel.Size = new System.Drawing.Size(21, 21);
+            this.hireTotalCountLabel.TabIndex = 9;
+            this.hireTotalCountLabel.Text = "0";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(553, 70);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(52, 21);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "총합";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(376, 70);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(52, 21);
+            this.label20.TabIndex = 7;
+            this.label20.Text = "여자";
+            // 
+            // womanHireCountCombo
+            // 
+            this.womanHireCountCombo.DropDownWidth = 76;
+            this.womanHireCountCombo.FormattingEnabled = true;
+            this.womanHireCountCombo.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.womanHireCountCombo.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"});
+            this.womanHireCountCombo.Location = new System.Drawing.Point(434, 67);
+            this.womanHireCountCombo.MaxLength = 2;
+            this.womanHireCountCombo.Name = "womanHireCountCombo";
+            this.womanHireCountCombo.Size = new System.Drawing.Size(76, 29);
+            this.womanHireCountCombo.TabIndex = 6;
+            this.womanHireCountCombo.Text = "0";
+            this.womanHireCountCombo.TextChanged += new System.EventHandler(this.womanHireCountCombo_TextChanged_1);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(232, 70);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 21);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "남자";
+            // 
+            // manHireCountCombo
+            // 
+            this.manHireCountCombo.FormattingEnabled = true;
+            this.manHireCountCombo.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"});
+            this.manHireCountCombo.Location = new System.Drawing.Point(290, 67);
+            this.manHireCountCombo.MaxLength = 2;
+            this.manHireCountCombo.Name = "manHireCountCombo";
+            this.manHireCountCombo.Size = new System.Drawing.Size(76, 29);
+            this.manHireCountCombo.TabIndex = 4;
+            this.manHireCountCombo.Text = "0";
+            this.manHireCountCombo.TextChanged += new System.EventHandler(this.manHireCountCombo_TextChanged_1);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(7, 150);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(213, 21);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "그날 지출한 간식비 : ";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 111);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(213, 21);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "그날 지출한 인건비 : ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 70);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(220, 21);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "그날 고용한 사람 수 : ";
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(119, 28);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(0, 21);
+            this.dateLabel.TabIndex = 0;
+            // 
             // LaborerManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 686);
+            this.Controls.Add(this.InputModeTab);
+            this.Controls.Add(this.gridModifyButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.laborGrid);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelControl1);
             this.Name = "LaborerManagementForm";
             this.Text = "인력관리 창";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LaborerManagementForm_FormClosing);
             this.Load += new System.EventHandler(this.LaborerManagementForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.laborerInputGroup.ResumeLayout(false);
+            this.laborerInputGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.laborGrid)).EndInit();
             this.menuStrip.ResumeLayout(false);
+            this.InputModeTab.ResumeLayout(false);
+            this.newInputModeTab.ResumeLayout(false);
+            this.alterModeTab.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,23 +822,23 @@
         #endregion
 
         private System.Windows.Forms.Label labelControl1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox laborerInputGroup;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.Label hireTotalCountLabel;
+        private System.Windows.Forms.Label todayDateLabel;
+        private System.Windows.Forms.Label todayHireTotalCountLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox womanHireCountCombo;
+        private System.Windows.Forms.ComboBox todayWomanHireCountCombo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox manHireCountCombo;
+        private System.Windows.Forms.ComboBox todayManHireCountCombo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox snakcostTxt;
-        private System.Windows.Forms.TextBox laborcostTxt;
-        private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.TextBox todaySnakcostTxt;
+        private System.Windows.Forms.TextBox todayLaborcostTxt;
+        private System.Windows.Forms.Button todayResetButton;
+        private System.Windows.Forms.Button todaySaveButton;
         private System.Windows.Forms.DataGridView laborGrid;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
@@ -524,7 +846,7 @@
         private System.Windows.Forms.ContextMenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem AllRemoveStripItem;
         private System.Windows.Forms.Button gridModifyButton;
-        private System.Windows.Forms.Label sumcostLabel;
+        private System.Windows.Forms.Label todaySumcostLabel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn manHireCountColumn;
@@ -534,5 +856,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn snakcostColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumcostColumn;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.TabControl InputModeTab;
+        private System.Windows.Forms.TabPage newInputModeTab;
+        private System.Windows.Forms.TabPage alterModeTab;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label sumcostLabel;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox snakcostTxt;
+        private System.Windows.Forms.TextBox laborcostTxt;
+        private System.Windows.Forms.Label hireTotalCountLabel;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox womanHireCountCombo;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox manHireCountCombo;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label dateLabel;
     }
 }
