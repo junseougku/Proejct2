@@ -22,7 +22,7 @@ namespace Project3.LaborerManagement
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("gridSettingSaveFile.log", FileMode.Create))
+            using (FileStream fs = new FileStream("gridSettingColumnsSaveFile.log", FileMode.Create))
             {
                 StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
 
@@ -43,6 +43,21 @@ namespace Project3.LaborerManagement
                 sw.Flush();
             }
 
+            using (FileStream fs = new FileStream("gridSettingLayoutSaveFile.log", FileMode.Create))
+            {
+                StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
+
+                sw.WriteLine(130);
+                sw.WriteLine(145);
+                sw.WriteLine(145);
+                sw.WriteLine(150);
+                sw.WriteLine(150);
+                sw.WriteLine(150);
+                sw.WriteLine(140);
+
+                sw.Flush();
+            }
+
             sendEvent();
 
             Close();
@@ -55,7 +70,7 @@ namespace Project3.LaborerManagement
 
         private void GridModifyForm_Load(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("gridSettingSaveFile.log", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("gridSettingColumnsSaveFile.log", FileMode.OpenOrCreate))
             {
                 StreamReader sr = new StreamReader(fs, Encoding.UTF8);
 

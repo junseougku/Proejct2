@@ -43,6 +43,9 @@ namespace Project3
         {
             //그리드에 로우 추가
             expenseGrid.Rows.Add(dateLabel.Text, expenseItemTxt.Text, expenseCostTxt.Text, expenseContentTxt.Text);
+
+            //저장후 전부지우는게 자연스러움
+            resetButton_Click(sender, e);
         }
 
         private void chartButton_Click(object sender, EventArgs e)

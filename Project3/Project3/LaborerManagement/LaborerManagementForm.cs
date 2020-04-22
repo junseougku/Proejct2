@@ -1,11 +1,6 @@
 ﻿using Project3.LaborerManagement;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -13,18 +8,17 @@ namespace Project3
 {
     public partial class LaborerManagementForm : Form
     {
-        public LaborerManagementForm()
-        {
-            InitializeComponent();
-        }
+        public LaborerManagementForm() => InitializeComponent();
 
         private void DisplayColumns()
         {
-            using (FileStream fs = new FileStream("gridSettingSaveFile.log", FileMode.OpenOrCreate))
+            //파일을 이용하여 그리드에 무슨항목을 표시할것인지 결정
+            using (FileStream fs = new FileStream("gridSettingColumnsSaveFile.log", FileMode.OpenOrCreate))
             {
                 StreamReader sr = new StreamReader(fs, Encoding.UTF8);
 
                 string checkValue = sr.ReadLine();
+                checkValue = sr.ReadLine();
                 if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
                     laborGrid.Columns[1].Visible = false;
                 else
@@ -32,36 +26,46 @@ namespace Project3
 
                 checkValue = sr.ReadLine();
                 if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
-                    laborGrid.Columns[2].Visible = false;                
+                    laborGrid.Columns[2].Visible = false;
                 else
                     laborGrid.Columns[2].Visible = true;
 
                 checkValue = sr.ReadLine();
                 if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
-                    laborGrid.Columns[3].Visible = false;               
+                    laborGrid.Columns[3].Visible = false;
                 else
                     laborGrid.Columns[3].Visible = true;
 
                 checkValue = sr.ReadLine();
                 if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
-                    laborGrid.Columns[4].Visible = false;                
+                    laborGrid.Columns[4].Visible = false;
                 else
                     laborGrid.Columns[4].Visible = true;
 
                 checkValue = sr.ReadLine();
                 if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
-                    laborGrid.Columns[5].Visible = false;               
+                    laborGrid.Columns[5].Visible = false;
                 else
                     laborGrid.Columns[5].Visible = true;
 
                 checkValue = sr.ReadLine();
                 if (String.IsNullOrEmpty(checkValue) || checkValue.Equals("0"))
-                    laborGrid.Columns[6].Visible = false;               
+                    laborGrid.Columns[6].Visible = false;
                 else
                     laborGrid.Columns[6].Visible = true;
             }
+
+            //파일을 이용하여 그리드의 항목길이 결정
+            using (FileStream fs = new FileStream("gridSettingLayoutSaveFile.log", FileMode.OpenOrCreate))
+            {
+                StreamReader sr = new StreamReader(fs, Encoding.UTF8);
+
+                for(int i = 0; i < laborGrid.Columns.Count; i++)
+                    laborGrid.Columns[i].Width = Convert.ToInt32(sr.ReadLine());
+            }
         }
 
+        //폼이 처음로드될때
         private void LaborerManagementForm_Load(object sender, EventArgs e)
         {
             dateLabel.Text = DateTime.Today.ToString("d");
@@ -81,9 +85,11 @@ namespace Project3
             if (snakcostTxt.Text.Equals("")) snakcostTxt.Text = "0";
 
             //그리드에 로우 추가
-            laborGrid.Rows.Add(dateLabel.Text, hireTotalCountLable.Text, laborcostTxt.Text, snakcostTxt.Text
+            laborGrid.Rows.Add(dateLabel.Text,manHireCountCombo.Text,
+                womanHireCountCombo.Text, hireTotalCountLabel.Text, laborcostTxt.Text, snakcostTxt.Text
                 , GlobalClass.Get_Sum_StringToIntValue(laborcostTxt.Text,snakcostTxt.Text));
 
+            //저장후 리셋하는것이 자연스러움
             resetButton_Click(sender, e);
         }
 
@@ -92,6 +98,7 @@ namespace Project3
         {
             manHireCountCombo.Text = "0";
             womanHireCountCombo.Text = "0";
+            hireTotalCountLabel.Text = "0";
 
             laborcostTxt.Text = "0";
             snakcostTxt.Text = "0";
@@ -106,7 +113,7 @@ namespace Project3
             //남자 고용수 여자고용수를 모두 정수형으로 바꿔 더한다
             if (womanHireCountCombo.Text.Equals("") == true) womanHireCountCombo.Text = "0";
             int hireCount = Convert.ToInt32(manHireCountCombo.Text) + Convert.ToInt32(womanHireCountCombo.Text);
-            hireTotalCountLable.Text = hireCount.ToString();
+            hireTotalCountLabel.Text = hireCount.ToString();
         }
 
         //남자고용수 콤보박스 클릭시 호출
@@ -118,10 +125,10 @@ namespace Project3
             //남자 고용수 여자고용수를 모두 정수형으로 바꿔 더한다
             if (manHireCountCombo.Text.Equals("") == true) manHireCountCombo.Text = "0";
             int hireCount = Convert.ToInt32(manHireCountCombo.Text) + Convert.ToInt32(womanHireCountCombo.Text);
-            hireTotalCountLable.Text = hireCount.ToString();
+            hireTotalCountLabel.Text = hireCount.ToString();
         }
 
-        //저장버튼 
+        //저장버튼툴팁 
         private void saveButton_MouseHover(object sender, EventArgs e)
         {
             saveButtonTooltip.ToolTipTitle = "저장버튼";
@@ -140,6 +147,8 @@ namespace Project3
             //데이터가 한번도 입력되지않은 곳도 이벤트발생하지않음
             if (laborGrid.Rows[rowIndex].Cells[0].Value == null) return;
 
+            //입력항목에 로우 데이터를 표시
+            dateLabel.Text = laborGrid.Rows[rowIndex].Cells[0].Value.ToString();
             manHireCountCombo.Text = laborGrid.Rows[rowIndex].Cells[1].Value.ToString();
             womanHireCountCombo.Text = laborGrid.Rows[rowIndex].Cells[2].Value.ToString();
             laborcostTxt.Text = laborGrid.Rows[rowIndex].Cells[3].Value.ToString();
@@ -178,6 +187,23 @@ namespace Project3
             int sumcostValue = Convert.ToInt32(laborcostTxt.Text) + Convert.ToInt32(snakcostTxt.Text);
 
             sumcostLabel.Text = sumcostValue.ToString() + "원";
+        }
+
+        //창닫기버튼
+        private void closeButton_Click(object sender, EventArgs e) => Close();
+
+        //폼이 닫힐때
+        private void LaborerManagementForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            using (FileStream fs = new FileStream("gridSettingLayoutSaveFile.log", FileMode.Create))
+            {
+                StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
+
+                for (int i = 0; i < laborGrid.Columns.Count; i++)
+                    sw.WriteLine(laborGrid.Columns[i].Width);
+
+                sw.Flush();
+            }
         }
     }
 }

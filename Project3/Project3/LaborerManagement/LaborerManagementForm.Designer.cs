@@ -44,7 +44,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.snakcostTxt = new System.Windows.Forms.TextBox();
             this.laborcostTxt = new System.Windows.Forms.TextBox();
-            this.hireTotalCountLable = new System.Windows.Forms.Label();
+            this.hireTotalCountLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.womanHireCountCombo = new System.Windows.Forms.ComboBox();
@@ -65,6 +65,7 @@
             this.menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AllRemoveStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveButtonTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.closeButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.laborGrid)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -93,7 +94,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.snakcostTxt);
             this.groupBox1.Controls.Add(this.laborcostTxt);
-            this.groupBox1.Controls.Add(this.hireTotalCountLable);
+            this.groupBox1.Controls.Add(this.hireTotalCountLabel);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.womanHireCountCombo);
@@ -217,14 +218,14 @@
             this.laborcostTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.laborcostTxt.TextChanged += new System.EventHandler(this.laborcostTxt_TextChanged);
             // 
-            // hireTotalCountLable
+            // hireTotalCountLabel
             // 
-            this.hireTotalCountLable.AutoSize = true;
-            this.hireTotalCountLable.Location = new System.Drawing.Point(601, 70);
-            this.hireTotalCountLable.Name = "hireTotalCountLable";
-            this.hireTotalCountLable.Size = new System.Drawing.Size(21, 21);
-            this.hireTotalCountLable.TabIndex = 9;
-            this.hireTotalCountLable.Text = "0";
+            this.hireTotalCountLabel.AutoSize = true;
+            this.hireTotalCountLabel.Location = new System.Drawing.Point(601, 70);
+            this.hireTotalCountLabel.Name = "hireTotalCountLabel";
+            this.hireTotalCountLabel.Size = new System.Drawing.Size(21, 21);
+            this.hireTotalCountLabel.TabIndex = 9;
+            this.hireTotalCountLabel.Text = "0";
             // 
             // label6
             // 
@@ -388,7 +389,7 @@
             this.dateColumn.Name = "dateColumn";
             this.dateColumn.ReadOnly = true;
             this.dateColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dateColumn.Width = 110;
+            this.dateColumn.Width = 130;
             // 
             // manHireCountColumn
             // 
@@ -424,7 +425,7 @@
             this.laborcostColumn.Name = "laborcostColumn";
             this.laborcostColumn.ReadOnly = true;
             this.laborcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.laborcostColumn.Width = 170;
+            this.laborcostColumn.Width = 150;
             // 
             // snakcostColumn
             // 
@@ -434,7 +435,7 @@
             this.snakcostColumn.Name = "snakcostColumn";
             this.snakcostColumn.ReadOnly = true;
             this.snakcostColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.snakcostColumn.Width = 170;
+            this.snakcostColumn.Width = 150;
             // 
             // sumcostColumn
             // 
@@ -463,16 +464,29 @@
             // 
             this.saveButtonTooltip.ToolTipTitle = "asd";
             // 
+            // closeButton
+            // 
+            this.closeButton.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.closeButton.Location = new System.Drawing.Point(938, 609);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(132, 65);
+            this.closeButton.TabIndex = 20;
+            this.closeButton.Text = "창 닫기";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
             // LaborerManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 610);
+            this.ClientSize = new System.Drawing.Size(1082, 686);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.laborGrid);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelControl1);
             this.Name = "LaborerManagementForm";
             this.Text = "인력관리 창";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LaborerManagementForm_FormClosing);
             this.Load += new System.EventHandler(this.LaborerManagementForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -491,7 +505,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.Label hireTotalCountLable;
+        private System.Windows.Forms.Label hireTotalCountLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox womanHireCountCombo;
@@ -519,5 +533,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn laborcostColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn snakcostColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumcostColumn;
+        private System.Windows.Forms.Button closeButton;
     }
 }
