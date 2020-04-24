@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project3.ScheduleManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,12 @@ namespace Project3
         {
             MemoForm memoForm = new MemoForm();
             memoForm.ShowDialog();
+        }
+
+        private void scheduleManagementButton_Click(object sender, EventArgs e)
+        {
+            ScheduleManagementForm scheduleManagementForm = new ScheduleManagementForm();
+            scheduleManagementForm.ShowDialog();
         }
     }
 }

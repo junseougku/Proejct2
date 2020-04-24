@@ -76,6 +76,8 @@ namespace Project3
             DisplayColumns();
 
             m_selectRowIndex = -1;
+
+            DBManager.DBSelect();
         }
 
         //신규입력탭 저장버튼
@@ -101,7 +103,7 @@ namespace Project3
             todayResetButton_Click(sender, e);
         }
 
-        //다시쓰기 버튼
+        //신규입력탭 다시쓰기 버튼
         private void todayResetButton_Click(object sender, EventArgs e)
         {
             todayManHireCountCombo.Text = "0";
@@ -112,8 +114,8 @@ namespace Project3
             todaySnakcostTxt.Text = "0";
         }
 
-        //여자고용수 콤보박스 클릭시 호출
-        private void womanHireCountCombo_TextChanged(object sender, EventArgs e)
+        //신규입력탭 여자고용수 콤보박스 수정시 호출
+        private void todayWomanHireCountCombo_TextChanged(object sender, EventArgs e)
         {
             //문자열에서 숫자만 나올수 있게끔 
             todayWomanHireCountCombo.Text = GlobalClass.Get_ValidatedCheckInt(todayWomanHireCountCombo.Text);
@@ -124,8 +126,8 @@ namespace Project3
             todayHireTotalCountLabel.Text = hireCount.ToString();
         }
 
-        //남자고용수 콤보박스 클릭시 호출
-        private void manHireCountCombo_TextChanged(object sender, EventArgs e)
+        //남자고용수 콤보박스 수정시 호출
+        private void todayManHireCountCombo_TextChanged(object sender, EventArgs e)
         {
             //문자열에서 숫자만 나올수 있게끔 
             todayManHireCountCombo.Text = GlobalClass.Get_ValidatedCheckInt(todayManHireCountCombo.Text);
@@ -136,11 +138,16 @@ namespace Project3
             todayHireTotalCountLabel.Text = hireCount.ToString();
         }
 
-        //저장버튼툴팁 
+        //신규탭 저장버튼툴팁 
+        private void todaySaveButton_MouseHover(object sender, EventArgs e)
+        {
+            TooltipManager.DisplayTooltipSaveButton(ref saveButtonTooltip, ref todaySaveButton);
+        }
+
+        //수정탭 저장버튼툴팁 
         private void saveButton_MouseHover(object sender, EventArgs e)
         {
-            saveButtonTooltip.ToolTipTitle = "저장버튼";
-            saveButtonTooltip.SetToolTip(todaySaveButton, "반드시 이 버튼을 눌러야 저장됩니다");
+            TooltipManager.DisplayTooltipSaveButton(ref saveButtonTooltip, ref saveButton);
         }
 
         //그리드에 로우 클릭시 그 데이터가 위 입력항목들에게 표시
@@ -224,12 +231,25 @@ namespace Project3
             if (MessageBox.Show("수정된 데이터를 정말 저장하시겠습니까?", "수정하기", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 return;
 
+            if (m_selectRowIndex < 0)
+            {
+                MessageBox.Show("입력된 데이터가 없습니다.", "실패");
+                return;
+            }
+
+            //로우데이터 입력항목의 값에맞게 수정
+            var alterRow = laborGrid.Rows[m_selectRowIndex];
+            if(alterRow.Cells[0].Value.Equals(""))
+            {
+                MessageBox.Show("입력된 데이터가 없습니다.","실패");
+                return;
+            }
+
             //저장하기로 했는데 비어있는 칸은 0으로 대체
             if (laborcostTxt.Text.Equals("")) laborcostTxt.Text = "0";
             if (snakcostTxt.Text.Equals("")) snakcostTxt.Text = "0";
 
             //로우데이터 입력항목의 값에맞게 수정
-            var alterRow = laborGrid.Rows[m_selectRowIndex];
             alterRow.Cells[0].Value = dateLabel.Text;
             alterRow.Cells[1].Value = manHireCountCombo.Text;
             alterRow.Cells[2].Value = womanHireCountCombo.Text;
@@ -275,6 +295,7 @@ namespace Project3
             hireTotalCountLabel.Text = hireCount.ToString();
         }
 
+        //수정모드 
         private void laborcostTxt_TextChanged(object sender, EventArgs e)
         {
             sumcostLabel.Text = CostTxt_TextChanged(laborcostTxt.Text, snakcostTxt.Text);

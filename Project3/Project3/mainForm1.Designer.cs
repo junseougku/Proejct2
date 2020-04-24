@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.memoButton = new System.Windows.Forms.Button();
+            this.scheduleManagementButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -99,12 +100,24 @@
             this.memoButton.UseVisualStyleBackColor = true;
             this.memoButton.Click += new System.EventHandler(this.memoButton_Click);
             // 
+            // scheduleManagementButton
+            // 
+            this.scheduleManagementButton.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.scheduleManagementButton.Location = new System.Drawing.Point(253, 68);
+            this.scheduleManagementButton.Name = "scheduleManagementButton";
+            this.scheduleManagementButton.Size = new System.Drawing.Size(157, 82);
+            this.scheduleManagementButton.TabIndex = 6;
+            this.scheduleManagementButton.Text = "일정관리";
+            this.scheduleManagementButton.UseVisualStyleBackColor = true;
+            this.scheduleManagementButton.Click += new System.EventHandler(this.scheduleManagementButton_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1066, 602);
+            this.Controls.Add(this.scheduleManagementButton);
             this.Controls.Add(this.memoButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -127,6 +140,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button memoButton;
+        private System.Windows.Forms.Button scheduleManagementButton;
     }
 }
 

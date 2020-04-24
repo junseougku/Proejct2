@@ -194,7 +194,7 @@
             this.todaySaveButton.Text = "저  장";
             this.todaySaveButton.UseVisualStyleBackColor = true;
             this.todaySaveButton.Click += new System.EventHandler(this.todaySaveButton_Click);
-            this.todaySaveButton.MouseHover += new System.EventHandler(this.saveButton_MouseHover);
+            this.todaySaveButton.MouseHover += new System.EventHandler(this.todaySaveButton_MouseHover);
             // 
             // label9
             // 
@@ -290,7 +290,7 @@
             this.todayWomanHireCountCombo.Size = new System.Drawing.Size(76, 29);
             this.todayWomanHireCountCombo.TabIndex = 6;
             this.todayWomanHireCountCombo.Text = "0";
-            this.todayWomanHireCountCombo.TextChanged += new System.EventHandler(this.womanHireCountCombo_TextChanged);
+            this.todayWomanHireCountCombo.TextChanged += new System.EventHandler(this.todayWomanHireCountCombo_TextChanged);
             // 
             // label4
             // 
@@ -326,7 +326,7 @@
             this.todayManHireCountCombo.Size = new System.Drawing.Size(76, 29);
             this.todayManHireCountCombo.TabIndex = 4;
             this.todayManHireCountCombo.Text = "0";
-            this.todayManHireCountCombo.TextChanged += new System.EventHandler(this.manHireCountCombo_TextChanged);
+            this.todayManHireCountCombo.TextChanged += new System.EventHandler(this.todayManHireCountCombo_TextChanged);
             // 
             // label3
             // 
@@ -404,6 +404,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.laborGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.laborGrid.Location = new System.Drawing.Point(12, 303);
+            this.laborGrid.MultiSelect = false;
             this.laborGrid.Name = "laborGrid";
             this.laborGrid.RowTemplate.Height = 23;
             this.laborGrid.Size = new System.Drawing.Size(1058, 304);
@@ -488,10 +489,6 @@
             this.AllRemoveStripItem.Name = "AllRemoveStripItem";
             this.AllRemoveStripItem.Size = new System.Drawing.Size(158, 22);
             this.AllRemoveStripItem.Text = "이 줄 전체 삭제";
-            // 
-            // saveButtonTooltip
-            // 
-            this.saveButtonTooltip.ToolTipTitle = "asd";
             // 
             // closeButton
             // 
@@ -623,6 +620,7 @@
             this.saveButton.Text = "저  장";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.saveButton.MouseHover += new System.EventHandler(this.saveButton_MouseHover);
             // 
             // label16
             // 
