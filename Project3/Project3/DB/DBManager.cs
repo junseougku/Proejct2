@@ -31,11 +31,11 @@ namespace Project3.DB
             cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1);
             cmd.CommandText += ")";
             cmd.ExecuteNonQuery();
-
+            
             sqlCon.Close();
         }
 
-        static public void DBSelect()
+        static public List<object> DBSelect(int _rowRange)
         {
             sqlCon = new SqlConnection();
             sqlCon.ConnectionString = @"Data Source=(local);Initial Catalog=Farming;User ID=sa;Password=wooribnc";
@@ -44,9 +44,18 @@ namespace Project3.DB
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = sqlCon;
 
-            cmd.CommandText = "SELECT COUNT(*) FROM LaborerManagementTable";
+            cmd.CommandText = "SELECT * FROM LaborerManagementTable";
             SqlDataReader reader = cmd.ExecuteReader();
 
+            List<object> readData = new List<object>();
+
+            while(reader.Read())
+            {
+                for(int i = 0; i <= _rowRange; i++)
+                    readData.Add(reader.GetValue(i));
+            }
+            reader.Close();
+            return readData;
         }
     }
 }

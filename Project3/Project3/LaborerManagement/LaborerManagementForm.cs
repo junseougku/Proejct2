@@ -1,6 +1,7 @@
 ﻿using Project3.DB;
 using Project3.LaborerManagement;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -75,9 +76,42 @@ namespace Project3
 
             DisplayColumns();
 
+            //선택된로우가 없으니 -1로 초기화
             m_selectRowIndex = -1;
 
-            DBManager.DBSelect();
+            //처음 폼이로드될떄는 로우를 선택할 수 없으므로 삭제버튼 비활성화
+            rowRemoveButton.Enabled = false;
+
+            //인력관리테이블에서 모두 셀렉트
+            List<object> selectDataList = DBManager.DBSelect(5);
+            int i = 0;
+            while (selectDataList.Count > i)
+            {
+                //테이블로우번호는 필요없으므로 i를 일부로 +1한다
+                i++;
+                
+                DateTime saveDate = Convert.ToDateTime(selectDataList[i]);
+                i++;
+
+                byte manHireCount = Convert.ToByte(selectDataList[i]);
+                i++;
+
+                byte womanHireCount = Convert.ToByte(selectDataList[i]);
+                i++;
+
+                int laborerCost = Convert.ToInt32(selectDataList[i]);
+                i++;
+                
+                int snakCost = Convert.ToInt32(selectDataList[i]);
+                i++;
+
+                //그리드에 로우 추가
+                laborGrid.Rows.Add(saveDate.ToString("d"), manHireCount.ToString()
+                    , womanHireCount.ToString(), (manHireCount+womanHireCount).ToString()
+                    , laborerCost.ToString(), snakCost.ToString()
+                    , GlobalClass.Get_Sum_StringToIntValue(laborerCost.ToString(), snakCost.ToString()));
+            }
+
         }
 
         //신규입력탭 저장버튼
@@ -92,8 +126,8 @@ namespace Project3
             if (todaySnakcostTxt.Text.Equals("")) todaySnakcostTxt.Text = "0";
 
             //그리드에 로우 추가
-            laborGrid.Rows.Add(todayDateLabel.Text, todayManHireCountCombo.Text,
-                todayWomanHireCountCombo.Text, todayHireTotalCountLabel.Text, todayLaborcostTxt.Text, todaySnakcostTxt.Text
+            laborGrid.Rows.Add(todayDateLabel.Text, todayManHireCountCombo.Text
+                , todayWomanHireCountCombo.Text, todayHireTotalCountLabel.Text, todayLaborcostTxt.Text, todaySnakcostTxt.Text
                 , GlobalClass.Get_Sum_StringToIntValue(todayLaborcostTxt.Text, todaySnakcostTxt.Text));
 
             DBManager.DBInsert(todayDateLabel.Text, todayManHireCountCombo.Text, todayWomanHireCountCombo.Text
@@ -162,7 +196,11 @@ namespace Project3
             //데이터가 한번도 입력되지않은 곳도 이벤트발생하지않음
             if (laborGrid.Rows[rowIndex].Cells[0].Value == null) return;
 
+            //몇번째 로우를 선택했는지 항상 멤버로 보관
             m_selectRowIndex = rowIndex;
+
+            //어떤 로우를 클릭했다면 그뒤부터 삭제버튼은 사용가능
+            rowRemoveButton.Enabled = true;
 
             //입력항목에 로우 데이터를 표시
             Copy_RowData(rowIndex);
@@ -304,6 +342,15 @@ namespace Project3
         private void snakcostTxt_TextChanged(object sender, EventArgs e)
         {
             sumcostLabel.Text = CostTxt_TextChanged(snakcostTxt.Text, laborcostTxt.Text);
+        }
+
+        private void rowHideButton_Click(object sender, EventArgs e)
+        {
+            //정말숨기시겠습니까?
+            if (MessageBox.Show("선택한 기록을 정말 삭제하시겠습니까?", "삭제하기", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+
+            //laborGrid.Rows[m_selectRowIndex]
         }
     }
 }

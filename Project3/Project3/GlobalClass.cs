@@ -12,6 +12,7 @@ namespace Project3
         //두 문자열을 int값으로 계산후 더한다음 다시문자열로 리턴
         public static string Get_Sum_StringToIntValue(string str1,string str2)
         {
+            //값이 없는 문자열이라면 0으로 바꿈
             if (str1.Equals("")) str1 = "0";
             if (str2.Equals("")) str2 = "0";
 

@@ -63,7 +63,7 @@
             this.snakcostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sumcostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.AllRemoveStripItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AllHideStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveButtonTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.closeButton = new System.Windows.Forms.Button();
             this.InputModeTab = new System.Windows.Forms.TabControl();
@@ -90,6 +90,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
+            this.rowRemoveButton = new System.Windows.Forms.Button();
+            this.rowHideListButton = new System.Windows.Forms.Button();
             this.laborerInputGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.laborGrid)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -480,15 +482,15 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AllRemoveStripItem});
+            this.AllHideStripItem});
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(159, 26);
+            this.menuStrip.Size = new System.Drawing.Size(171, 26);
             // 
-            // AllRemoveStripItem
+            // AllHideStripItem
             // 
-            this.AllRemoveStripItem.Name = "AllRemoveStripItem";
-            this.AllRemoveStripItem.Size = new System.Drawing.Size(158, 22);
-            this.AllRemoveStripItem.Text = "이 줄 전체 삭제";
+            this.AllHideStripItem.Name = "AllHideStripItem";
+            this.AllHideStripItem.Size = new System.Drawing.Size(170, 22);
+            this.AllHideStripItem.Text = "이 줄 전체 숨기기";
             // 
             // closeButton
             // 
@@ -789,11 +791,34 @@
             this.dateLabel.Size = new System.Drawing.Size(0, 21);
             this.dateLabel.TabIndex = 0;
             // 
+            // rowRemoveButton
+            // 
+            this.rowRemoveButton.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rowRemoveButton.Location = new System.Drawing.Point(524, 613);
+            this.rowRemoveButton.Name = "rowRemoveButton";
+            this.rowRemoveButton.Size = new System.Drawing.Size(132, 65);
+            this.rowRemoveButton.TabIndex = 21;
+            this.rowRemoveButton.Text = "삭제";
+            this.rowRemoveButton.UseVisualStyleBackColor = true;
+            this.rowRemoveButton.Click += new System.EventHandler(this.rowHideButton_Click);
+            // 
+            // rowHideListButton
+            // 
+            this.rowHideListButton.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rowHideListButton.Location = new System.Drawing.Point(662, 613);
+            this.rowHideListButton.Name = "rowHideListButton";
+            this.rowHideListButton.Size = new System.Drawing.Size(132, 65);
+            this.rowHideListButton.TabIndex = 22;
+            this.rowHideListButton.Text = "숨겨진 목록";
+            this.rowHideListButton.UseVisualStyleBackColor = true;
+            // 
             // LaborerManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 686);
+            this.Controls.Add(this.rowHideListButton);
+            this.Controls.Add(this.rowRemoveButton);
             this.Controls.Add(this.InputModeTab);
             this.Controls.Add(this.gridModifyButton);
             this.Controls.Add(this.closeButton);
@@ -842,7 +867,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ToolTip saveButtonTooltip;
         private System.Windows.Forms.ContextMenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem AllRemoveStripItem;
+        private System.Windows.Forms.ToolStripMenuItem AllHideStripItem;
         private System.Windows.Forms.Button gridModifyButton;
         private System.Windows.Forms.Label todaySumcostLabel;
         private System.Windows.Forms.Label label11;
@@ -878,5 +903,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Button rowRemoveButton;
+        private System.Windows.Forms.Button rowHideListButton;
     }
 }

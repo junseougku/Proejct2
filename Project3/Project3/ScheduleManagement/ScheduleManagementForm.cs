@@ -19,6 +19,10 @@ namespace Project3.ScheduleManagement
         private void ScheduleManagementForm_Load(object sender, EventArgs e)
         {
             todayDateLabel.Text = DateTime.Today.ToString("d");
+
+            yearTxt.Value = DateTime.Today.Year;
+            monthCombo.Text = DateTime.Today.Month.ToString();
+            dayCombo.Text = DateTime.Today.Day.ToString();
         }
 
         private void yearDownButton_Click(object sender, EventArgs e)

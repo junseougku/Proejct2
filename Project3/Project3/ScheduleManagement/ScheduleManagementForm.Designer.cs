@@ -39,13 +39,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dayCombo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.scheduleMemoTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.alramCheckBox = new WindowsFormsApplication2.CustomCheckBox(this.components);
             this.closeButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.scheduleMemoList = new System.Windows.Forms.ListView();
+            this.dateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.yearTxt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,8 +123,10 @@
             // 
             // monthCombo
             // 
+            this.monthCombo.DropDownWidth = 90;
             this.monthCombo.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.monthCombo.FormattingEnabled = true;
+            this.monthCombo.ItemHeight = 21;
             this.monthCombo.Items.AddRange(new object[] {
             "1",
             "2",
@@ -139,6 +142,7 @@
             "12"});
             this.monthCombo.Location = new System.Drawing.Point(18, 143);
             this.monthCombo.Name = "monthCombo";
+            this.monthCombo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.monthCombo.Size = new System.Drawing.Size(61, 29);
             this.monthCombo.TabIndex = 23;
             // 
@@ -154,6 +158,7 @@
             // 
             // dayCombo
             // 
+            this.dayCombo.DropDownWidth = 90;
             this.dayCombo.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dayCombo.FormattingEnabled = true;
             this.dayCombo.Items.AddRange(new object[] {
@@ -203,15 +208,15 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "일";
             // 
-            // textBox1
+            // scheduleMemoTxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(18, 274);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(214, 164);
-            this.textBox1.TabIndex = 27;
+            this.scheduleMemoTxt.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.scheduleMemoTxt.Location = new System.Drawing.Point(18, 274);
+            this.scheduleMemoTxt.Multiline = true;
+            this.scheduleMemoTxt.Name = "scheduleMemoTxt";
+            this.scheduleMemoTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.scheduleMemoTxt.Size = new System.Drawing.Size(214, 164);
+            this.scheduleMemoTxt.TabIndex = 27;
             // 
             // label4
             // 
@@ -262,29 +267,35 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 21);
             this.label5.TabIndex = 32;
-            this.label5.Text = "메모기록";
+            this.label5.Text = "일정기록";
             // 
-            // listView1
+            // scheduleMemoList
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(276, 81);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(338, 286);
-            this.listView1.TabIndex = 33;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.scheduleMemoList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.dateColumn});
+            this.scheduleMemoList.HideSelection = false;
+            this.scheduleMemoList.Location = new System.Drawing.Point(276, 81);
+            this.scheduleMemoList.Name = "scheduleMemoList";
+            this.scheduleMemoList.Size = new System.Drawing.Size(338, 286);
+            this.scheduleMemoList.TabIndex = 33;
+            this.scheduleMemoList.UseCompatibleStateImageBehavior = false;
+            // 
+            // dateColumn
+            // 
+            this.dateColumn.Text = "날짜";
             // 
             // ScheduleManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 450);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.scheduleMemoList);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.alramCheckBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.scheduleMemoTxt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dayCombo);
             this.Controls.Add(this.label1);
@@ -315,12 +326,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox dayCombo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox scheduleMemoTxt;
         private System.Windows.Forms.Label label4;
         private WindowsFormsApplication2.CustomCheckBox alramCheckBox;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView scheduleMemoList;
+        private System.Windows.Forms.ColumnHeader dateColumn;
     }
 }
