@@ -221,6 +221,7 @@ namespace Project3
         private void gridModifyButton_Click(object sender, EventArgs e)
         {
             GridModifyForm gridModifyForm = new GridModifyForm();
+            //컬럼정보
             gridModifyForm.sendEvent += new GridModifyForm.Send_EventHandler(DisplayColumns);
             gridModifyForm.ShowDialog();
         }
@@ -344,6 +345,7 @@ namespace Project3
             sumcostLabel.Text = CostTxt_TextChanged(snakcostTxt.Text, laborcostTxt.Text);
         }
 
+        //항목 숨김버튼
         private void rowHideButton_Click(object sender, EventArgs e)
         {
             //정말숨기시겠습니까?

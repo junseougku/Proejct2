@@ -12,6 +12,7 @@ namespace Project3.LaborerManagement
 {
     public partial class GridModifyForm : Form
     {
+        //표 
         public delegate void Send_EventHandler();
         public event Send_EventHandler sendEvent;
 
@@ -26,7 +27,9 @@ namespace Project3.LaborerManagement
             {
                 StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
 
+                //날짜는 무조건 저장하므로 무조건 1 
                 sw.WriteLine(1);
+
                 if (manCheckBox.Check == false) sw.WriteLine(0);
                 else sw.WriteLine(1);
                 if (womanCheckBox.Check == false) sw.WriteLine(0);

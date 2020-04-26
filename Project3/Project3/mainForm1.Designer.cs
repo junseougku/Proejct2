@@ -32,7 +32,7 @@
             this.laborerManagementButton = new System.Windows.Forms.Button();
             this.expenseManagementButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SellManagementButton = new System.Windows.Forms.Button();
             this.memoButton = new System.Windows.Forms.Button();
             this.scheduleManagementButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -79,15 +79,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "날씨";
             // 
-            // button1
+            // SellManagementButton
             // 
-            this.button1.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(17, 288);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(157, 82);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "판매관리";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SellManagementButton.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.SellManagementButton.Location = new System.Drawing.Point(17, 288);
+            this.SellManagementButton.Name = "SellManagementButton";
+            this.SellManagementButton.Size = new System.Drawing.Size(157, 82);
+            this.SellManagementButton.TabIndex = 4;
+            this.SellManagementButton.Text = "판매관리";
+            this.SellManagementButton.UseVisualStyleBackColor = true;
+            this.SellManagementButton.Click += new System.EventHandler(this.SellManagementButton_Click);
             // 
             // memoButton
             // 
@@ -119,7 +120,7 @@
             this.ClientSize = new System.Drawing.Size(1066, 602);
             this.Controls.Add(this.scheduleManagementButton);
             this.Controls.Add(this.memoButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SellManagementButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.expenseManagementButton);
             this.Controls.Add(this.laborerManagementButton);
@@ -138,7 +139,7 @@
         private System.Windows.Forms.Button laborerManagementButton;
         private System.Windows.Forms.Button expenseManagementButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SellManagementButton;
         private System.Windows.Forms.Button memoButton;
         private System.Windows.Forms.Button scheduleManagementButton;
     }

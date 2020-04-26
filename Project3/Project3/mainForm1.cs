@@ -1,4 +1,5 @@
 ﻿using Project3.ScheduleManagement;
+using Project3.SellManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,12 @@ namespace Project3
         {
             ScheduleManagementForm scheduleManagementForm = new ScheduleManagementForm();
             scheduleManagementForm.ShowDialog();
+        }
+
+        private void SellManagementButton_Click(object sender, EventArgs e)
+        {
+            SellManagementForm sellManagementForm = new SellManagementForm();
+            sellManagementForm.ShowDialog();
         }
     }
 }
