@@ -35,17 +35,15 @@ namespace Project3.SellManagement
                 StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
 
                 sw.WriteLine(newSellItemTxt.Text);
-
                 sw.Flush();
             }
 
-            MessageBox.Show("성공적인 저장했습니다");
-
+            //자식폼이 닫히기전 부모폼의 이벤트 실행
             sendEvent();
+
+            MessageBox.Show("성공적인 저장했습니다");
 
             Close();
         }
-
-
     }
 }

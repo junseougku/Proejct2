@@ -312,7 +312,7 @@ namespace Project3
             Copy_RowData(m_selectRowIndex);              
         }
 
-        private void manHireCountCombo_TextChanged_1(object sender, EventArgs e)
+        private void manHireCountCombo_TextChanged(object sender, EventArgs e)
         {
             //문자열에서 숫자만 나올수 있게끔 
             manHireCountCombo.Text = GlobalClass.Get_ValidatedCheckInt(manHireCountCombo.Text);
@@ -323,7 +323,7 @@ namespace Project3
             hireTotalCountLabel.Text = hireCount.ToString();
         }
 
-        private void womanHireCountCombo_TextChanged_1(object sender, EventArgs e)
+        private void womanHireCountCombo_TextChanged(object sender, EventArgs e)
         {
             //문자열에서 숫자만 나올수 있게끔 
             womanHireCountCombo.Text = GlobalClass.Get_ValidatedCheckInt(womanHireCountCombo.Text);

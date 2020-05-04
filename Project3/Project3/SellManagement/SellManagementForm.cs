@@ -50,5 +50,17 @@ namespace Project3.SellManagement
                 }
             }
         }
+
+        private void sellItemCountTxt_TextChanged(object sender, EventArgs e)
+        {
+            //문자열에서 숫자만 나올수 있게끔 
+            sellItemCountTxt.Text = GlobalClass.Get_ValidatedCheckInt(sellItemCountTxt.Text);
+        }
+
+        private void sellItemRemove_Click(object sender, EventArgs e)
+        {
+            SellItemRemoveForm sellItemRemoveForm = new SellItemRemoveForm();
+            sellItemRemoveForm.ShowDialog();
+        }
     }
 }

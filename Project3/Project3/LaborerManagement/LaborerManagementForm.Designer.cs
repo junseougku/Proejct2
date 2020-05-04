@@ -718,7 +718,7 @@
             this.womanHireCountCombo.Size = new System.Drawing.Size(76, 29);
             this.womanHireCountCombo.TabIndex = 6;
             this.womanHireCountCombo.Text = "0";
-            this.womanHireCountCombo.TextChanged += new System.EventHandler(this.womanHireCountCombo_TextChanged_1);
+            this.womanHireCountCombo.TextChanged += new System.EventHandler(this.womanHireCountCombo_TextChanged);
             // 
             // label21
             // 
@@ -754,7 +754,7 @@
             this.manHireCountCombo.Size = new System.Drawing.Size(76, 29);
             this.manHireCountCombo.TabIndex = 4;
             this.manHireCountCombo.Text = "0";
-            this.manHireCountCombo.TextChanged += new System.EventHandler(this.manHireCountCombo_TextChanged_1);
+            this.manHireCountCombo.TextChanged += new System.EventHandler(this.manHireCountCombo_TextChanged);
             // 
             // label22
             // 
