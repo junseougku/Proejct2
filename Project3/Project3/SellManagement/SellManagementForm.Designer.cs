@@ -30,6 +30,11 @@
         {
             this.labelControl1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.salesSumTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.soleCountPriceTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.sellItemRemove = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SellItemAddButton = new System.Windows.Forms.Button();
             this.sellItemCombo = new System.Windows.Forms.ComboBox();
@@ -42,7 +47,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.sellItemRemove = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +62,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.salesSumTxt);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.soleCountPriceTxt);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.sellItemRemove);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.SellItemAddButton);
@@ -74,23 +82,73 @@
             this.groupBox1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(17, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1058, 315);
+            this.groupBox1.Size = new System.Drawing.Size(1058, 457);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
+            // 
+            // salesSumTxt
+            // 
+            this.salesSumTxt.Location = new System.Drawing.Point(139, 230);
+            this.salesSumTxt.MaxLength = 8;
+            this.salesSumTxt.Name = "salesSumTxt";
+            this.salesSumTxt.ReadOnly = true;
+            this.salesSumTxt.Size = new System.Drawing.Size(205, 32);
+            this.salesSumTxt.TabIndex = 24;
+            this.salesSumTxt.Text = "0";
+            this.salesSumTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(346, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 21);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "원";
+            // 
+            // soleCountPriceTxt
+            // 
+            this.soleCountPriceTxt.Location = new System.Drawing.Point(139, 128);
+            this.soleCountPriceTxt.MaxLength = 8;
+            this.soleCountPriceTxt.Name = "soleCountPriceTxt";
+            this.soleCountPriceTxt.Size = new System.Drawing.Size(201, 32);
+            this.soleCountPriceTxt.TabIndex = 22;
+            this.soleCountPriceTxt.Text = "0";
+            this.soleCountPriceTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 21);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "1개당 가격 :";
+            // 
+            // sellItemRemove
+            // 
+            this.sellItemRemove.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sellItemRemove.Location = new System.Drawing.Point(483, 48);
+            this.sellItemRemove.Name = "sellItemRemove";
+            this.sellItemRemove.Size = new System.Drawing.Size(132, 65);
+            this.sellItemRemove.TabIndex = 20;
+            this.sellItemRemove.Text = "판매항목  등록삭제";
+            this.sellItemRemove.UseVisualStyleBackColor = true;
+            this.sellItemRemove.Click += new System.EventHandler(this.sellItemRemove_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 130);
+            this.label1.Location = new System.Drawing.Point(7, 182);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 21);
+            this.label1.Size = new System.Drawing.Size(108, 21);
             this.label1.TabIndex = 19;
-            this.label1.Text = "판매개수 : ";
+            this.label1.Text = "판매개수 :";
             // 
             // SellItemAddButton
             // 
             this.SellItemAddButton.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.SellItemAddButton.Location = new System.Drawing.Point(353, 48);
+            this.SellItemAddButton.Location = new System.Drawing.Point(345, 48);
             this.SellItemAddButton.Name = "SellItemAddButton";
             this.SellItemAddButton.Size = new System.Drawing.Size(132, 65);
             this.SellItemAddButton.TabIndex = 18;
@@ -101,7 +159,7 @@
             // sellItemCombo
             // 
             this.sellItemCombo.FormattingEnabled = true;
-            this.sellItemCombo.Location = new System.Drawing.Point(128, 67);
+            this.sellItemCombo.Location = new System.Drawing.Point(120, 67);
             this.sellItemCombo.Name = "sellItemCombo";
             this.sellItemCombo.Size = new System.Drawing.Size(219, 29);
             this.sellItemCombo.TabIndex = 17;
@@ -111,14 +169,14 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(7, 28);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 21);
+            this.label10.Size = new System.Drawing.Size(108, 21);
             this.label10.TabIndex = 16;
-            this.label10.Text = "오늘날짜 : ";
+            this.label10.Text = "오늘날짜 :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(434, 200);
+            this.label4.Location = new System.Drawing.Point(350, 233);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 21);
             this.label4.TabIndex = 12;
@@ -127,7 +185,7 @@
             // resetButton
             // 
             this.resetButton.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resetButton.Location = new System.Drawing.Point(914, 164);
+            this.resetButton.Location = new System.Drawing.Point(914, 211);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(132, 65);
             this.resetButton.TabIndex = 14;
@@ -136,7 +194,7 @@
             // 
             // expenseContentTxt
             // 
-            this.expenseContentTxt.Location = new System.Drawing.Point(128, 235);
+            this.expenseContentTxt.Location = new System.Drawing.Point(120, 283);
             this.expenseContentTxt.MaxLength = 2048;
             this.expenseContentTxt.Multiline = true;
             this.expenseContentTxt.Name = "expenseContentTxt";
@@ -145,7 +203,7 @@
             // 
             // sellItemCountTxt
             // 
-            this.sellItemCountTxt.Location = new System.Drawing.Point(128, 127);
+            this.sellItemCountTxt.Location = new System.Drawing.Point(121, 179);
             this.sellItemCountTxt.MaxLength = 8;
             this.sellItemCountTxt.Name = "sellItemCountTxt";
             this.sellItemCountTxt.Size = new System.Drawing.Size(150, 32);
@@ -157,29 +215,29 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 239);
+            this.label12.Location = new System.Drawing.Point(7, 286);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 21);
+            this.label12.Size = new System.Drawing.Size(108, 21);
             this.label12.TabIndex = 3;
-            this.label12.Text = "지출내용 : ";
+            this.label12.Text = "지출내용 :";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(7, 200);
+            this.label13.Location = new System.Drawing.Point(7, 233);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(115, 21);
+            this.label13.Size = new System.Drawing.Size(129, 21);
             this.label13.TabIndex = 2;
-            this.label13.Text = "지출금액 : ";
+            this.label13.Text = "판매액합계 :";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(6, 70);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(115, 21);
+            this.label14.Size = new System.Drawing.Size(108, 21);
             this.label14.TabIndex = 1;
-            this.label14.Text = "판매항목 : ";
+            this.label14.Text = "판매항목 :";
             // 
             // dateLabel
             // 
@@ -189,17 +247,6 @@
             this.dateLabel.Size = new System.Drawing.Size(52, 21);
             this.dateLabel.TabIndex = 0;
             this.dateLabel.Text = "날짜";
-            // 
-            // sellItemRemove
-            // 
-            this.sellItemRemove.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sellItemRemove.Location = new System.Drawing.Point(491, 48);
-            this.sellItemRemove.Name = "sellItemRemove";
-            this.sellItemRemove.Size = new System.Drawing.Size(132, 65);
-            this.sellItemRemove.TabIndex = 20;
-            this.sellItemRemove.Text = "판매항목  등록삭제";
-            this.sellItemRemove.UseVisualStyleBackColor = true;
-            this.sellItemRemove.Click += new System.EventHandler(this.sellItemRemove_Click);
             // 
             // SellManagementForm
             // 
@@ -235,5 +282,9 @@
         private System.Windows.Forms.ComboBox sellItemCombo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button sellItemRemove;
+        private System.Windows.Forms.TextBox salesSumTxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox soleCountPriceTxt;
+        private System.Windows.Forms.Label label2;
     }
 }

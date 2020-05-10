@@ -52,5 +52,12 @@ namespace Project3
         {
             expenseGrid.Visible = false;
         }
+
+        private void saveButton_MouseHover(object sender, EventArgs e)
+        {
+            saveButtonToolTip.OwnerDraw = true;
+            saveButtonToolTip.ToolTipTitle = "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ";
+            saveButtonToolTip.SetToolTip(saveButton, "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
+        }
     }
 }

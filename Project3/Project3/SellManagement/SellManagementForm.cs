@@ -22,7 +22,7 @@ namespace Project3.SellManagement
         private void SellItemAddButton_Click(object sender, EventArgs e)
         {
             SellItemAddForm sellItemAddForm = new SellItemAddForm();
-            sellItemAddForm.sendEvent += new SellItemAddForm.Send_EventHandler(Fill_SellItem);
+            sellItemAddForm.e_sendEvent += new Send_EventHandler(Fill_SellItem);
             sellItemAddForm.ShowDialog();
         }
 
@@ -60,6 +60,7 @@ namespace Project3.SellManagement
         private void sellItemRemove_Click(object sender, EventArgs e)
         {
             SellItemRemoveForm sellItemRemoveForm = new SellItemRemoveForm();
+            sellItemRemoveForm.e_sendEvent += new Send_EventHandler(Fill_SellItem);
             sellItemRemoveForm.ShowDialog();
         }
     }

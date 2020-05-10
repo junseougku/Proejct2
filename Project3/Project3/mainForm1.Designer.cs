@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.laborerManagementButton = new System.Windows.Forms.Button();
             this.expenseManagementButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.SellManagementButton = new System.Windows.Forms.Button();
+            this.sellManagementButton = new System.Windows.Forms.Button();
             this.memoButton = new System.Windows.Forms.Button();
             this.scheduleManagementButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -69,31 +69,21 @@
             this.expenseManagementButton.UseVisualStyleBackColor = true;
             this.expenseManagementButton.Click += new System.EventHandler(this.expenseManagementButton_Click);
             // 
-            // label2
+            // sellManagementButton
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(670, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "날씨";
-            // 
-            // SellManagementButton
-            // 
-            this.SellManagementButton.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.SellManagementButton.Location = new System.Drawing.Point(17, 288);
-            this.SellManagementButton.Name = "SellManagementButton";
-            this.SellManagementButton.Size = new System.Drawing.Size(157, 82);
-            this.SellManagementButton.TabIndex = 4;
-            this.SellManagementButton.Text = "판매관리";
-            this.SellManagementButton.UseVisualStyleBackColor = true;
-            this.SellManagementButton.Click += new System.EventHandler(this.SellManagementButton_Click);
+            this.sellManagementButton.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sellManagementButton.Location = new System.Drawing.Point(17, 288);
+            this.sellManagementButton.Name = "sellManagementButton";
+            this.sellManagementButton.Size = new System.Drawing.Size(157, 82);
+            this.sellManagementButton.TabIndex = 4;
+            this.sellManagementButton.Text = "판매관리";
+            this.sellManagementButton.UseVisualStyleBackColor = true;
+            this.sellManagementButton.Click += new System.EventHandler(this.sellManagementButton_Click);
             // 
             // memoButton
             // 
             this.memoButton.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.memoButton.Location = new System.Drawing.Point(17, 399);
+            this.memoButton.Location = new System.Drawing.Point(253, 177);
             this.memoButton.Name = "memoButton";
             this.memoButton.Size = new System.Drawing.Size(157, 82);
             this.memoButton.TabIndex = 5;
@@ -112,16 +102,27 @@
             this.scheduleManagementButton.UseVisualStyleBackColor = true;
             this.scheduleManagementButton.Click += new System.EventHandler(this.scheduleManagementButton_Click);
             // 
+            // exitButton
+            // 
+            this.exitButton.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.exitButton.Location = new System.Drawing.Point(253, 288);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(157, 82);
+            this.exitButton.TabIndex = 7;
+            this.exitButton.Text = "종  료";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1066, 602);
+            this.ClientSize = new System.Drawing.Size(428, 381);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.scheduleManagementButton);
             this.Controls.Add(this.memoButton);
-            this.Controls.Add(this.SellManagementButton);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.sellManagementButton);
             this.Controls.Add(this.expenseManagementButton);
             this.Controls.Add(this.laborerManagementButton);
             this.Controls.Add(this.label1);
@@ -138,10 +139,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button laborerManagementButton;
         private System.Windows.Forms.Button expenseManagementButton;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button SellManagementButton;
+        private System.Windows.Forms.Button sellManagementButton;
         private System.Windows.Forms.Button memoButton;
         private System.Windows.Forms.Button scheduleManagementButton;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 

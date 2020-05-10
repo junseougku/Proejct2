@@ -13,6 +13,8 @@ namespace Project3.SellManagement
 {
     public partial class SellItemRemoveForm : Form
     {
+        public event Send_EventHandler e_sendEvent;
+
         public SellItemRemoveForm()
         {
             InitializeComponent();
@@ -87,6 +89,9 @@ namespace Project3.SellManagement
 
                 sw.Flush();
             }
+
+            //자식폼이 닫히기전 부모폼의 이벤트 실행 // 콤보박스 채우기
+            e_sendEvent();
 
             MessageBox.Show("삭제가 완료되었습니다");
 

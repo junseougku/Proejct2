@@ -11,11 +11,12 @@ using System.Windows.Forms;
 
 namespace Project3.SellManagement
 {
+    public delegate void Send_EventHandler();
+
     public partial class SellItemAddForm : Form
     {
         //판매항목을 추가하면 다시 이전폼에서 콤보박스에 항목을 동적으로 추가하기위한 이벤트
-        public delegate void Send_EventHandler();
-        public event Send_EventHandler sendEvent;
+        public event Send_EventHandler e_sendEvent;
 
         public SellItemAddForm()
         {
@@ -38,8 +39,8 @@ namespace Project3.SellManagement
                 sw.Flush();
             }
 
-            //자식폼이 닫히기전 부모폼의 이벤트 실행
-            sendEvent();
+            //자식폼이 닫히기전 부모폼의 이벤트 실행// 콤보박스 채우기
+            e_sendEvent();
 
             MessageBox.Show("성공적인 저장했습니다");
 

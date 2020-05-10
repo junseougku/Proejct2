@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelControl1 = new System.Windows.Forms.Label();
             this.laborerInputGroup = new System.Windows.Forms.GroupBox();
             this.todaySumcostLabel = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.sumcostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AllHideStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveButtonTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.saveButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.closeButton = new System.Windows.Forms.Button();
             this.InputModeTab = new System.Windows.Forms.TabControl();
             this.newInputModeTab = new System.Windows.Forms.TabPage();
@@ -379,14 +379,14 @@
             // 
             // laborGrid
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.laborGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.laborGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.laborGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.laborGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dateColumn,
@@ -397,14 +397,14 @@
             this.snakcostColumn,
             this.sumcostColumn});
             this.laborGrid.ContextMenuStrip = this.menuStrip;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.laborGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.laborGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.laborGrid.Location = new System.Drawing.Point(12, 303);
             this.laborGrid.MultiSelect = false;
             this.laborGrid.Name = "laborGrid";
@@ -491,6 +491,13 @@
             this.AllHideStripItem.Name = "AllHideStripItem";
             this.AllHideStripItem.Size = new System.Drawing.Size(170, 22);
             this.AllHideStripItem.Text = "이 줄 전체 숨기기";
+            // 
+            // saveButtonToolTip
+            // 
+            this.saveButtonToolTip.AutoPopDelay = 10000;
+            this.saveButtonToolTip.InitialDelay = 250;
+            this.saveButtonToolTip.ReshowDelay = 100;
+            this.saveButtonToolTip.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.saveButtonToolTip_Draw);
             // 
             // closeButton
             // 
@@ -865,7 +872,7 @@
         private System.Windows.Forms.DataGridView laborGrid;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ToolTip saveButtonTooltip;
+        private System.Windows.Forms.ToolTip saveButtonToolTip;
         private System.Windows.Forms.ContextMenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem AllHideStripItem;
         private System.Windows.Forms.Button gridModifyButton;

@@ -2,6 +2,7 @@
 using Project3.LaborerManagement;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -130,8 +131,8 @@ namespace Project3
                 , todayWomanHireCountCombo.Text, todayHireTotalCountLabel.Text, todayLaborcostTxt.Text, todaySnakcostTxt.Text
                 , GlobalClass.Get_Sum_StringToIntValue(todayLaborcostTxt.Text, todaySnakcostTxt.Text));
 
-            DBManager.DBInsert(todayDateLabel.Text, todayManHireCountCombo.Text, todayWomanHireCountCombo.Text
-                , todayLaborcostTxt.Text, todaySnakcostTxt.Text);
+            //DBManager.DBInsert(todayDateLabel.Text, todayManHireCountCombo.Text, todayWomanHireCountCombo.Text
+            //   , todayLaborcostTxt.Text, todaySnakcostTxt.Text);
             
             //저장후 리셋하는것이 자연스러움
             todayResetButton_Click(sender, e);
@@ -175,13 +176,17 @@ namespace Project3
         //신규탭 저장버튼툴팁 
         private void todaySaveButton_MouseHover(object sender, EventArgs e)
         {
-            TooltipManager.DisplayTooltipSaveButton(ref saveButtonTooltip, ref todaySaveButton);
+            saveButtonToolTip.OwnerDraw = true;
+            saveButtonToolTip.ToolTipTitle = "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ";
+            saveButtonToolTip.SetToolTip(todaySaveButton, "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
         }
 
         //수정탭 저장버튼툴팁 
         private void saveButton_MouseHover(object sender, EventArgs e)
         {
-            TooltipManager.DisplayTooltipSaveButton(ref saveButtonTooltip, ref saveButton);
+            saveButtonToolTip.OwnerDraw = true;
+            saveButtonToolTip.ToolTipTitle = "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ";
+            saveButtonToolTip.SetToolTip(saveButton, "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
         }
 
         //그리드에 로우 클릭시 그 데이터가 위 입력항목들에게 표시
@@ -353,6 +358,12 @@ namespace Project3
                 return;
 
             //laborGrid.Rows[m_selectRowIndex]
+        }
+
+        //툴팁의 글씨를 크게하기위해 Owder를 켜주고 드로우함수를 호출
+        private void saveButtonToolTip_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            ToolTipManager.DisplayToolTipInit(ref e,eToolTipMessages.SAVE);
         }
     }
 }

@@ -58,7 +58,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 24);
             this.label2.TabIndex = 1;
-            this.label2.Text = "일정관리";
+            this.label2.Text = "알람관리";
             // 
             // label10
             // 
@@ -226,7 +226,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 21);
             this.label4.TabIndex = 28;
-            this.label4.Text = "일정메모";
+            this.label4.Text = "알람메모";
             // 
             // alramCheckBox
             // 
@@ -258,6 +258,7 @@
             this.saveButton.TabIndex = 31;
             this.saveButton.Text = "저  장";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // label5
             // 
@@ -267,7 +268,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 21);
             this.label5.TabIndex = 32;
-            this.label5.Text = "일정기록";
+            this.label5.Text = "알람기록";
             // 
             // scheduleMemoList
             // 

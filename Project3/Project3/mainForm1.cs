@@ -42,10 +42,15 @@ namespace Project3
             scheduleManagementForm.ShowDialog();
         }
 
-        private void SellManagementButton_Click(object sender, EventArgs e)
+        private void sellManagementButton_Click(object sender, EventArgs e)
         {
             SellManagementForm sellManagementForm = new SellManagementForm();
             sellManagementForm.ShowDialog();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
